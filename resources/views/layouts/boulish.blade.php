@@ -5,9 +5,9 @@
 </head>
 <body>
     <div id="app">
-        @include('inc.navbar')
+        <main class="container-fluid">
+            @include('inc.adminNav')
 
-        <main class="py-5">
             @yield('content')
         </main>
     </div>
