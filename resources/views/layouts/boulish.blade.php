@@ -5,11 +5,18 @@
 </head>
 <body>
     <div id="app">
-        <main class="container-fluid">
-            @include('inc.adminNav')
 
-            @yield('content')
-        </main>
+        @include('boulish.mainNav')
+
+        <div class="container-fluid pt-5 mt-5">
+            <div class="row">
+                @include('boulish.sidebar')
+
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
     </div>
 </body>
 </html>

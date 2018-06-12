@@ -25,4 +25,24 @@ class BoulishController extends Controller
     {
         return view('boulish.index');
     }
+
+    public function dishes()
+    {
+        return view('boulish.dishes');
+    }
+
+    public function promotions()
+    {
+        return view('boulish.promotions');
+    }
+
+    public function products()
+    {
+        return view('boulish.products');
+    }
+
+    public function services()
+    {
+        return view('boulish.services');
+    }
 }
