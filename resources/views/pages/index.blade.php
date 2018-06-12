@@ -38,7 +38,7 @@
                         <div class="card">
                             <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Jeudi 31 mai</h5>
+                                <h5 class="card-title">Vendredi 1 juin</h5>
 
                                 <p class="card-text">Foie gras d'oie truffé</p>
                             </div>
@@ -53,7 +53,7 @@
                         <div class="card">
                             <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Jeudi 31 mai</h5>
+                                <h5 class="card-title">Samedi 2 juin</h5>
 
                                 <p class="card-text">Foie gras d'oie truffé</p>
                             </div>

@@ -10,7 +10,13 @@
 
         <div class="container-fluid pt-5 mt-5">
             <div class="row">
+                @guest
+
+                @else
+
                 @include('boulish.sidebar')
+                
+                @endguest
 
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     @yield('content')

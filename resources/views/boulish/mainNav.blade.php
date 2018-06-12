@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-laravel">
     <div class="container">
-        <h2 class="navbar-brand">Boucherie Centrale</h2>
+        <a href="/" class="navbar-brand">Boucherie Centrale</a>
 
         @guest
 
