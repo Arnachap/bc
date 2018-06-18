@@ -27,3 +27,5 @@ Route::get('/boulish/dishes', 'BoulishController@dishes');
 Route::get('/boulish/promotions', 'BoulishController@promotions');
 Route::get('/boulish/products', 'BoulishController@products');
 Route::get('/boulish/services', 'BoulishController@services');
+
+Route::resource('products', 'ProductsController');

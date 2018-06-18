@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class BoulishController extends Controller
 {
@@ -38,7 +39,8 @@ class BoulishController extends Controller
 
     public function products()
     {
-        return view('boulish.products');
+        $products = Product::all();
+        return view('boulish.products')->with('products', $products);
     }
 
     public function services()
