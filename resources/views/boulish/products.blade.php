@@ -33,43 +33,21 @@
             @endif
 
             <tr id="addProductButton">
-                <th colspan="4" scope="row" class="text-center text-success">
+                <th colspan="4" scope="row" class="text-center text-primary">
                     <i class="fa fa-2x fa-plus-circle"></i><br>
                     Ajouter un produit
                 </th>
             </tr>
 
             <tr id="addProductForm" style="display: none;">
-                <form action="#">
-                    <th scope="row">
-                        <div class="row">
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Cotelettes">
-                            </div>
-
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Marinés à la sauce au caramel">
-                            </div>
-                        </div>
-                    </th>
-                    
-                    <td>
-                        <input type="text" class="form-control w-50 ml-auto" placeholder="5,00">
-                    </td>
-
-                    <td>
-                        <p style="font-size: 20px;">€ par</p>
-                    </td>
-
-                    <td>
-                        <input type="text" class="form-control" placeholder="kg">
-                    </td>
-                </form>
+                {!! Form::open(['action' => 'ProductsController@store', 'method' => 'POST']) !!}
+                    @include('boulish.inc.addForm')
+                {!! Form::close() !!}
             </tr>
         </tbody>
     </table>
 
-    <button class="btn btn-success d-block mx-auto">Ajouter une catégorie</button>
+    <button class="btn btn-primary d-block mx-auto">Ajouter une catégorie</button>
 </main>
 
 @endsection

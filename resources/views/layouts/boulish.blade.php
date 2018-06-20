@@ -6,7 +6,7 @@
 <body>
     <div id="app">
 
-        @include('boulish.mainNav')
+        @include('boulish.inc.mainNav')
 
         <div class="container-fluid pt-5 mt-5">
             <div class="row">
@@ -14,11 +14,14 @@
 
                 @else
 
-                @include('boulish.sidebar')
+                    @include('boulish.inc.sidebar')
+
+                    @include('boulish.inc.messages')
+                    
+                    @yield('content')
                 
                 @endguest
 
-                @yield('content')
             </div>
         </div>
     </div>

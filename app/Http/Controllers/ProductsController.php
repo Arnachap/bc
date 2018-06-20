@@ -15,7 +15,21 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'portion' => 'required'
+        ]);
+        
+        // Add product
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->portion = $request->input('portion');
+        $product->save();
+
+        return redirect('/boulish/products')->with('success', 'Produit ajouté');
     }
 
     /**

@@ -122,6 +122,7 @@ return [
         'country' => 'pays',
         'address' => 'adresse',
         'phone' => 'téléphone',
+        'price' => 'prix',
         'mobile' => 'portable',
         'age' => 'âge',
         'sex' => 'sexe',
