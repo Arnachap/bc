@@ -5,7 +5,7 @@
         </div>
 
         <div class="col">
-            {{ Form::text('descritpion', '', ['class' => 'form-control', 'placeholder' => 'Marinés à la sauce au caramel']) }}
+            {{ Form::text('description', '', ['class' => 'form-control', 'placeholder' => 'Marinés à la sauce au caramel']) }}
         </div>
 
         <div class="col">

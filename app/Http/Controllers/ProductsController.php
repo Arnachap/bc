@@ -41,7 +41,21 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'portion' => 'required'
+        ]);
+        
+        // Add product
+        $product = Product::find($id);
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->portion = $request->input('portion');
+        $product->save();
+
+        return redirect('/boulish/products')->with('success', 'Produit modifié');
     }
 
     /**
@@ -52,6 +66,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+
+        return redirect('/boulish/products')->with('success', 'Produit supprimé');
     }
 }

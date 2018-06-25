@@ -18,8 +18,13 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 $(document).ready(function(){
-    $('#addProductButton').click(function() {
-        $('#addProductButton').hide();
-        $('#addProductForm').show();
+    $('#addButton').click(function() {
+        $('#addButton').hide();
+        $('#addForm').show();
+    });
+
+    $('.editButton').click(function() {
+        var id = this.id;
+        $('#editForm-' + id).show();
     });
 });

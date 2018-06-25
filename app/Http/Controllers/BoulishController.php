@@ -40,6 +40,7 @@ class BoulishController extends Controller
     public function products()
     {
         $products = Product::all();
+        
         return view('boulish.products')->with('products', $products);
     }
 

@@ -18,9 +18,9 @@
 
                     @include('boulish.inc.messages')
                     
-                    @yield('content')
-                
                 @endguest
+
+                @yield('content')
 
             </div>
         </div>

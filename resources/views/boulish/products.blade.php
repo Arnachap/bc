@@ -19,27 +19,46 @@
             @if(count($products) > 0)
                 @foreach($products as $product)
                     <tr>
-                        <th scope="row">{{ $product->name }}</th>
+                        <th scope="row">
+                            {{ $product->name }}
+
+                            @if(!empty($product->description))
+                                <small> ({{ $product->description }})</small>
+                            @endif
+                        </th>
 
                         <td class="text-right">{{ $product->price }}€ / {{ $product->portion }}</td>
 
-                        <td class="text-center text-primary"><i class="fa fa-2x fa-pencil"></i></td>
+                        <td id="{{ $product->id }}" class="editButton text-center text-primary">
+                            <i class="fa fa-2x fa-pencil"></i>
+                        </td>
 
-                        <td class="text-center text-danger"><i class="fa fa-2x fa-trash"></i></td>
+                        <td class="text-center">
+                            {!! Form::open(['action' => ['ProductsController@destroy', $product->id], 'method' => 'POST']) !!}
+                                {{ Form::hidden('_method', 'DELETE') }}
+                                {{ Form::button('<i class="fa fa-2x fa-trash text-danger"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
+                            {!! Form::close() !!}
+                        </td>
+                    </tr>
+
+                    <tr id="editForm-{{ $product->id }}" style="display: none;">
+                        {!! Form::open(['action' => ['ProductsController@update', $product->id], 'method' => 'POST']) !!}
+                            @include('boulish.inc.editForm')
+                        {!! Form::close() !!}
                     </tr>
                 @endforeach
             @else
 
             @endif
 
-            <tr id="addProductButton">
+            <tr id="addButton">
                 <th colspan="4" scope="row" class="text-center text-primary">
                     <i class="fa fa-2x fa-plus-circle"></i><br>
                     Ajouter un produit
                 </th>
             </tr>
 
-            <tr id="addProductForm" style="display: none;">
+            <tr id="addForm" style="display: none;">
                 {!! Form::open(['action' => 'ProductsController@store', 'method' => 'POST']) !!}
                     @include('boulish.inc.addForm')
                 {!! Form::close() !!}
