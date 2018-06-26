@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Service;
 
 class PagesController extends Controller
 {
@@ -18,7 +19,9 @@ class PagesController extends Controller
     }
 
     public function service() {
-        return view('pages.service');
+        $services = Service::all();
+
+        return view('pages.service')->with('services', $services);
     }
 
     public function about() {

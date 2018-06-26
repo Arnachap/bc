@@ -29,7 +29,11 @@
             </th>
     
             <td class="text-right">
-              {{ $product->price }}€ / {{ $product->portion }}
+              {{ $product->price }}€ 
+              
+              @if(!empty($product->portion))
+                / {{ $product->portion }}
+              @endif
             </td>
           </tr>
         @endforeach
