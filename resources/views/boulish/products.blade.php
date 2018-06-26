@@ -27,7 +27,13 @@
                             @endif
                         </th>
 
-                        <td class="text-right">{{ $product->price }}€ / {{ $product->portion }}</td>
+                        <td class="text-right">
+                            {{ $product->price }}€
+
+                            @if(!empty($product->portion)) 
+                                / {{ $product->portion }}
+                            @endif
+                        </td>
 
                         <td id="{{ $product->id }}" class="editButton text-center text-primary">
                             <i class="fa fa-2x fa-pencil"></i>

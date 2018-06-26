@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Service;
 
 class BoulishController extends Controller
 {
@@ -46,6 +47,8 @@ class BoulishController extends Controller
 
     public function services()
     {
-        return view('boulish.services');
+        $services = Service::all();
+        
+        return view('boulish.services')->with('services', $services);
     }
 }

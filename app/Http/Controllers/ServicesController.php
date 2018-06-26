@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
+use App\Service;
 
-class ProductsController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Store a newly created resource in storage.
@@ -21,14 +21,14 @@ class ProductsController extends Controller
         ]);
         
         // Add product
-        $product = new Product;
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        $product->price = $request->input('price');
-        $product->portion = $request->input('portion');
-        $product->save();
+        $service = new Service;
+        $service->name = $request->input('name');
+        $service->description = $request->input('description');
+        $service->price = $request->input('price');
+        $service->portion = $request->input('portion');
+        $service->save();
 
-        return redirect('/boulish/products')->with('success', 'Produit ajouté');
+        return redirect('/boulish/services')->with('success', 'Produit ajouté');
     }
 
     /**
@@ -46,14 +46,14 @@ class ProductsController extends Controller
         ]);
         
         // Add product
-        $product = Product::find($id);
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        $product->price = $request->input('price');
-        $product->portion = $request->input('portion');
-        $product->save();
+        $service = Service::find($id);
+        $service->name = $request->input('name');
+        $service->description = $request->input('description');
+        $service->price = $request->input('price');
+        $service->portion = $request->input('portion');
+        $service->save();
 
-        return redirect('/boulish/products')->with('success', 'Produit modifié');
+        return redirect('/boulish/services')->with('success', 'Produit modifié');
     }
 
     /**
@@ -64,9 +64,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
-        $product->delete();
+        $service = Service::find($id);
+        $service->delete();
 
-        return redirect('/boulish/products')->with('success', 'Produit supprimé');
+        return redirect('/boulish/services')->with('success', 'Produit supprimé');
     }
 }
