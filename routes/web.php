@@ -30,3 +30,5 @@ Route::get('/boulish/services', 'BoulishController@services');
 
 Route::resource('products', 'ProductsController');
 Route::resource('services', 'ServicesController');
+Route::resource('productCategories', 'ProductCategoriesController');
+Route::resource('servicesCategories', 'ServiceCategoriesController');

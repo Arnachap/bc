@@ -18,13 +18,18 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 $(document).ready(function(){
-    $('#addButton').click(function() {
-        $('#addButton').hide();
-        $('#addForm').show();
+    $('[id^="addButton-"]').click(function() {
+        var categoryId = this.id.replace( /addButton-/, '' );
+        $('#addButton-' + categoryId).hide();
+        $('#addForm-' + categoryId).show();
     });
 
     $('.editButton').click(function() {
-        var id = this.id;
-        $('#editForm-' + id).show();
+        $('#editForm-' + this.id).show();
+    });
+
+    $('#addCategoryButton').click(function() {
+        $('#addCategoryButton').removeClass('d-block').hide();
+        $('#addCategoryForm').show();
     });
 });

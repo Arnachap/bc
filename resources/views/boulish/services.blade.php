@@ -72,7 +72,13 @@
         </tbody>
     </table>
 
-    <button class="btn btn-primary d-block mx-auto">Ajouter une catégorie</button>
+    <button id="addCategoryButton" class="btn btn-primary d-block mx-auto">Ajouter une catégorie</button>
+
+    <table id="addCategoryForm" class="table bg-white table-hover my-4" style="display: none;">
+        {!! Form::open(['action' => 'ServiceCategoriesController@store', 'method' => 'POST']) !!}
+            @include('boulish.inc.addCategoryForm')
+        {!! Form::close() !!}
+    </table>
 
 </main>
 
