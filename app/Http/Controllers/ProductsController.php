@@ -26,6 +26,7 @@ class ProductsController extends Controller
         $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->portion = $request->input('portion');
+        $product->category_id = $request->input('category_id');
         $product->save();
 
         return redirect('/boulish/products')->with('success', 'Produit ajouté');

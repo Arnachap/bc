@@ -26,6 +26,7 @@ class ServicesController extends Controller
         $service->description = $request->input('description');
         $service->price = $request->input('price');
         $service->portion = $request->input('portion');
+        $service->category_id = $request->input('category_id');
         $service->save();
 
         return redirect('/boulish/services')->with('success', 'Produit ajouté');

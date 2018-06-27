@@ -20,43 +20,43 @@
                 <tbody>
                     @if(count($products) > 0)
                         @foreach($products as $product)
-                            <tr>
-                                <th scope="row">
-                                    {{ $product->name }}
-        
-                                    @if(!empty($product->description))
-                                        <small> ({{ $product->description }})</small>
-                                    @endif
-                                </th>
-        
-                                <td class="text-right">
-                                    {{ $product->price }}€
-        
-                                    @if(!empty($product->portion)) 
-                                        / {{ $product->portion }}
-                                    @endif
-                                </td>
-        
-                                <td id="{{ $product->id }}" class="editButton text-center text-primary">
-                                    <i class="fa fa-2x fa-pencil"></i>
-                                </td>
-        
-                                <td class="text-center">
-                                    {!! Form::open(['action' => ['ProductsController@destroy', $product->id], 'method' => 'POST']) !!}
-                                        {{ Form::hidden('_method', 'DELETE') }}
-                                        {{ Form::button('<i class="fa fa-2x fa-trash text-danger"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
+                            @if($product->category_id == $category->id)
+                                <tr>
+                                    <th scope="row">
+                                        {{ $product->name }}
+            
+                                        @if(!empty($product->description))
+                                            <small> ({{ $product->description }})</small>
+                                        @endif
+                                    </th>
+            
+                                    <td class="text-right">
+                                        {{ $product->price }}€
+            
+                                        @if(!empty($product->portion)) 
+                                            / {{ $product->portion }}
+                                        @endif
+                                    </td>
+            
+                                    <td id="{{ $product->id }}" class="editButton text-center text-primary">
+                                        <i class="fa fa-2x fa-pencil"></i>
+                                    </td>
+            
+                                    <td class="text-center">
+                                        {!! Form::open(['action' => ['ProductsController@destroy', $product->id], 'method' => 'POST']) !!}
+                                            {{ Form::hidden('_method', 'DELETE') }}
+                                            {{ Form::button('<i class="fa fa-2x fa-trash text-danger"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
+            
+                                <tr id="editForm-{{ $product->id }}" style="display: none;">
+                                    {!! Form::open(['action' => ['ProductsController@update', $product->id], 'method' => 'POST']) !!}
+                                        @include('boulish.inc.editForm')
                                     {!! Form::close() !!}
-                                </td>
-                            </tr>
-        
-                            <tr id="editForm-{{ $product->id }}" style="display: none;">
-                                {!! Form::open(['action' => ['ProductsController@update', $product->id], 'method' => 'POST']) !!}
-                                    @include('boulish.inc.editForm')
-                                {!! Form::close() !!}
-                            </tr>
+                                </tr>
+                            @endif
                         @endforeach
-                    @else
-        
                     @endif
         
                     <tr id="addButton-{{ $category->id }}">
@@ -76,9 +76,9 @@
         @endforeach
     @endif
 
-    <button id="addCategoryButton" class="btn btn-primary d-block mx-auto">Ajouter une catégorie</button>
+    <button id="addCategoryButton" class="btn btn-primary d-block mx-auto my-5">Ajouter une catégorie</button>
 
-    <table id="addCategoryForm" class="table bg-white table-hover my-4" style="display: none;">
+    <table id="addCategoryForm" class="table bg-white table-hover my-5" style="display: none;">
         {!! Form::open(['action' => 'ProductCategoriesController@store', 'method' => 'POST']) !!}
             @include('boulish.inc.addCategoryForm')
         {!! Form::close() !!}
