@@ -5,41 +5,45 @@
 <div class="container">
   <h1 class="text-center my-4">Nos produits</h1>
 
-  <table class="table bg-white table-hover my-4">
-    <thead>
-      <tr class="bg-dark text-white">
-        <th scope="col" style="width: 90%;">Boeuf
-          <small class="ml-3">Origine France, élaboré sur place</small>
-        </th>
+  @foreach($productCategories as $category)
+    <table class="table bg-white table-hover my-4">
+      <thead>
+        <tr class="bg-dark text-white">
+          <th scope="col" style="width: 88%;">{{ $category->name }}
+            <small class="ml-3">{{ $category->description }}</small>
+          </th>
 
-        <th style="width: 10%;"></th>
-      </tr>
-    </thead>
+          <th class="text-right" style="width: 12%;">Prix</th>
+        </tr>
+      </thead>
 
-    <tbody>
-      @if(count($products) > 0)
-        @foreach($products as $product)
-          <tr>
-            <th scope="row">
-              {{ $product->name }}
+      <tbody>
+        @if(count($products) > 0)
+          @foreach($products as $product)
+            @if($product->category_id == $category->id)
+              <tr>
+                <th scope="row">
+                  {{ $product->name }}
 
-              @if(!empty($product->description))
-                <small> ({{ $product->description }})</small>
-              @endif
-            </th>
-    
-            <td class="text-right">
-              {{ $product->price }}€ 
-              
-              @if(!empty($product->portion))
-                / {{ $product->portion }}
-              @endif
-            </td>
-          </tr>
-        @endforeach
-      @endif
-    </tbody>
-  </table>
+                  @if(!empty($product->description))
+                    <small> ({{ $product->description }})</small>
+                  @endif
+                </th>
+        
+                <td class="text-right">
+                  {{ $product->price }}€ 
+                  
+                  @if(!empty($product->portion))
+                    / {{ $product->portion }}
+                  @endif
+                </td>
+              </tr>
+            @endif
+          @endforeach
+        @endif
+      </tbody>
+    </table>
+  @endforeach
 </div>
 
 @endsection
