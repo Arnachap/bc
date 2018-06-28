@@ -8,13 +8,31 @@
     @if(count($serviceCategories) > 0)
         @foreach($serviceCategories as $category)
             <table class="table bg-white table-hover my-4">
-                <thead>
+                <thead id="tableHeader-{{ $category->id }}">
                     <tr class="bg-dark text-white">
-                        <th scope="col" style="width: 80%;">{{ $category->name }} <small class="ml-3">{{ $category->description }}</small></th>
+                        <th scope="col" style="width: 80%;">{{ $category->name }} 
+                            <small class="ml-3">{{ $category->description }}</small>
+                        </th>
+
                         <th style="width: 10%;"></th>
-                        <th style="width: 5%;">Modifier</th>
-                        <th style="width: 5%;">Supprimer</th>
+
+                        <th style="width: 5%;">
+                            <button id="categoryButton-{{ $category->id }}" class="btn btn-primary py-0">Modifier</button>
+                        </th>
+
+                        <th style="width: 5%;">
+                            {!! Form::open(['action' => ['ServiceCategoriesController@destroy', $category->id], 'method' => 'POST']) !!}
+                                {{ Form::hidden('_method', 'DELETE') }}
+                                {{ Form::submit('Supprimer', ['class' => 'btn btn-danger py-0']) }}
+                            {!! Form::close() !!}
+                        </th>
                     </tr>
+                </thead>
+
+                <thead id="editCategory-{{ $category->id }}" style="display: none;">
+                    {!! Form::open(['action' => ['ServiceCategoriesController@update', $category->id], 'method' => 'POST']) !!}
+                        @include('boulish.inc.editCategoryForm')
+                    {!! Form::close() !!}
                 </thead>
 
                 <tbody>
@@ -76,9 +94,9 @@
         @endforeach
     @endif
 
-    <button id="addCategoryButton" class="btn btn-primary d-block mx-auto">Ajouter une catégorie</button>
+    <button id="addCategoryButton" class="btn btn-primary d-block mx-auto my-5">Ajouter une catégorie</button>
 
-    <table id="addCategoryForm" class="table bg-white table-hover my-4" style="display: none;">
+    <table id="addCategoryForm" class="table bg-white table-hover my-5" style="display: none;">
         {!! Form::open(['action' => 'ServiceCategoriesController@store', 'method' => 'POST']) !!}
             @include('boulish.inc.addCategoryForm')
         {!! Form::close() !!}

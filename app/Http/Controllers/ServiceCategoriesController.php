@@ -37,7 +37,17 @@ class ServiceCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        // Edit category
+        $serviceCategory = ServiceCategory::find($id);
+        $serviceCategory->name = $request->input('name');
+        $serviceCategory->description = $request->input('description');
+        $serviceCategory->save();
+
+        return redirect('/boulish/services')->with('success', 'Catégorie modifiée');
     }
 
     /**
@@ -48,6 +58,9 @@ class ServiceCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = ServiceCategory::find($id);
+        $category->delete();
+
+        return redirect('/boulish/services')->with('success', 'Catégorie supprimée');
     }
 }

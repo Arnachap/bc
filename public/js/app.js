@@ -13896,6 +13896,7 @@ window.Vue = __webpack_require__(36);
 $(document).ready(function () {
     $('[id^="addButton-"]').click(function () {
         var categoryId = this.id.replace(/addButton-/, '');
+
         $('#addButton-' + categoryId).hide();
         $('#addForm-' + categoryId).show();
     });
@@ -13907,6 +13908,13 @@ $(document).ready(function () {
     $('#addCategoryButton').click(function () {
         $('#addCategoryButton').removeClass('d-block').hide();
         $('#addCategoryForm').show();
+    });
+
+    $('[id^="categoryButton-"]').click(function () {
+        var categoryId = this.id.replace(/categoryButton-/, '');
+
+        $('#tableHeader-' + categoryId).hide();
+        $('#editCategory-' + categoryId).show();
     });
 });
 

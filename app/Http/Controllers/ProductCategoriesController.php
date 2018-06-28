@@ -37,7 +37,17 @@ class ProductCategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
+        // Edit category
+        $productCategory = ProductCategory::find($id);
+        $productCategory->name = $request->input('name');
+        $productCategory->description = $request->input('description');
+        $productCategory->save();
+
+        return redirect('/boulish/products')->with('success', 'Catégorie modifiée');
     }
 
     /**
@@ -48,6 +58,9 @@ class ProductCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = ProductCategory::find($id);
+        $category->delete();
+
+        return redirect('/boulish/products')->with('success', 'Catégorie supprimée');
     }
 }

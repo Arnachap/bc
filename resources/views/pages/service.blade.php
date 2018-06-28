@@ -7,6 +7,7 @@
   <h2 class="text-center">La carte des menus et produits</h2>
 
   @foreach($serviceCategories as $category)
+
     <table class="table bg-white table-hover my-4">
       <thead>
         <tr class="bg-dark text-white">
@@ -19,32 +20,48 @@
       </thead>
 
       <tbody>
+
         @if(count($services) > 0)
+
           @foreach($services as $service)
+
             @if($service->category_id == $category->id)
+
               <tr>
                 <th scope="row">
-                  {{ $service->name }}
+                  {{ $service->name }} 
 
                   @if(!empty($service->description))
-                    <small> ({{ $service->description }})</small>
+
+                    <small>({{ $service->description }})</small>
+
                   @endif
+
                 </th>
         
                 <td class="text-right">
                   {{ $service->price }}€ 
                   
                   @if(!empty($service->portion))
+
                     / {{ $service->portion }}
+
                   @endif
+
                 </td>
               </tr>
+
             @endif
+
           @endforeach
+
         @endif
+
       </tbody>
     </table>
+
   @endforeach
+  
 </div>
 
 @endsection

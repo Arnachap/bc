@@ -19,7 +19,8 @@ window.Vue = require('vue');
 
 $(document).ready(function(){
     $('[id^="addButton-"]').click(function() {
-        var categoryId = this.id.replace( /addButton-/, '' );
+        var categoryId = this.id.replace(/addButton-/, '');
+        
         $('#addButton-' + categoryId).hide();
         $('#addForm-' + categoryId).show();
     });
@@ -31,5 +32,12 @@ $(document).ready(function(){
     $('#addCategoryButton').click(function() {
         $('#addCategoryButton').removeClass('d-block').hide();
         $('#addCategoryForm').show();
+    });
+
+    $('[id^="categoryButton-"]').click(function() {
+        var categoryId = this.id.replace(/categoryButton-/, '');
+        
+        $('#tableHeader-' + categoryId).hide();
+        $('#editCategory-' + categoryId).show();
     });
 });
