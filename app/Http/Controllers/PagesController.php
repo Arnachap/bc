@@ -7,11 +7,15 @@ use App\Product;
 use App\ProductCategory;
 use App\Service;
 use App\ServiceCategory;
+use App\DailyMeal;
 
 class PagesController extends Controller
 {
     public function index() {
-        return view('pages.index');
+        $dailyMeals = DailyMeal::all();
+
+        return view('pages.index')
+            ->with('dailyMeals', $dailyMeals);
     }
 
     public function products() {

@@ -5,7 +5,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link {{ Request::is('boulish/dishes') ? 'active' : '' }}" href="/boulish/dishes">Plats du jour</a>
+            <a class="nav-link {{ Request::is('boulish/meals') ? 'active' : '' }}" href="/boulish/meals">Plats du jour</a>
         </li>
 
         <li class="nav-item">

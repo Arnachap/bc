@@ -19,50 +19,51 @@
 
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card">
-                            <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Jeudi 31 mai</h5>
 
-                                <p class="card-text">Foie gras d'oie truffé</p>
-                            </div>
+                    @if(count($dailyMeals) > 0)
 
-                            <div class="card-footer bg-light">
-                                <p class="text-muted">10,80€ / portion</p>
-                            </div>
-                        </div>
-                    </div>
+                        @foreach($dailyMeals as $meal)
 
-                    <div class="carousel-item">
-                        <div class="card">
-                            <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Vendredi 1 juin</h5>
+                            @if($loop->first)
 
-                                <p class="card-text">Foie gras d'oie truffé</p>
-                            </div>
+                                <div class="carousel-item active">
+                                    <div class="card">
+                                        <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ Carbon\Carbon::parse($meal->date)->format('d F') }}</h5>
 
-                            <div class="card-footer bg-light">
-                                <p class="text-muted">10,80€ / portion</p>
-                            </div>
-                        </div>
-                    </div>
+                                            <p class="card-text">{{ $meal->name }}</p>
+                                        </div>
 
-                    <div class="carousel-item">
-                        <div class="card">
-                            <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Samedi 2 juin</h5>
+                                        <div class="card-footer bg-light">
+                                            <p class="text-muted">{{ $meal->price }} / {{ $meal->portion }}</p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <p class="card-text">Foie gras d'oie truffé</p>
-                            </div>
+                            @else
 
-                            <div class="card-footer bg-light">
-                                <p class="text-muted">10,80€ / portion</p>
-                            </div>
-                        </div>
-                    </div>
+                                <div class="carousel-item">
+                                    <div class="card">
+                                        <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ Carbon\Carbon::parse($meal->date)->format('d F') }}</h5>
+
+                                            <p class="card-text">{{ $meal->name }}</p>
+                                        </div>
+
+                                        <div class="card-footer bg-light">
+                                            <p class="text-muted">{{ $meal->price }} / {{ $meal->portion }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            @endif
+                                    
+                        @endforeach
+
+                    @endif
+                
                 </div>
 
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
