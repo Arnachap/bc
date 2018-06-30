@@ -34,10 +34,29 @@
 
             <div class="col-md-3 p-3">
                 <div class="card">
-                    <div class="card-body text-success">
+                    <img class="card-img-top img-fluid" src="../img/plate1.jpg" alt="">
+
+                    <div id="addDailyMealButton" class="card-body text-primary">
                         <i class="card-title pricing-card-title fa fa-4x fa-plus-circle"></i>
     
                         <h3>Ajouter un plat du jour</h3 >
+                    </div>
+
+                    <div id="addDailyMealForm" class="card-body text-center" style="display: none;">
+                        {!! Form::open(['action' => 'DailyMealsController@store', 'method' => 'POST']) !!}
+                            {{ Form::date('date', '', ['class' => 'form-control my-2']) }}
+                            {{ Form::text('name', '', ['class' => 'form-control my-2', 'placeholder' => 'Nom du plat']) }}
+                            <div class="row">
+                                <div class="col">
+                                    {{ Form::number('price', '', ['class' => 'form-control', 'placeholder' => 'Prix', 'step' => '0.01']) }}
+                                </div>
+
+                                <div class="col">
+                                    {{ Form::text('portion', '', ['class' => 'form-control', 'placeholder' => 'Portion']) }}
+                                </div>
+                            </div>
+                            {{ Form::submit('Ajouter aux Menus du jour', ['class' => 'btn btn-primary my-2']) }}
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

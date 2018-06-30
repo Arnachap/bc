@@ -15,7 +15,21 @@ class DailyMealsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'date' => 'required',
+            'price' => 'required'
+        ]);
+
+        // Add daily meal
+        $meal = new DailyMeal;
+        $meal->name = $request->input('name');
+        $meal->date = $request->input('date');
+        $meal->price = $request->input('price');
+        $meal->portion = $request->input('portion');
+        $meal->save();
+
+        return redirect('/boulish/meals')->with('success', 'Plat du jour ajouté');
     }
 
     /**

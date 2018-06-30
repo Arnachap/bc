@@ -13894,6 +13894,7 @@ window.Vue = __webpack_require__(36);
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 $(document).ready(function () {
+    // Show add product form
     $('[id^="addButton-"]').click(function () {
         var categoryId = this.id.replace(/addButton-/, '');
 
@@ -13901,20 +13902,29 @@ $(document).ready(function () {
         $('#addForm-' + categoryId).show();
     });
 
+    // Show edit product form
     $('.editButton').click(function () {
         $('#editForm-' + this.id).show();
     });
 
+    // Show add category form
     $('#addCategoryButton').click(function () {
         $('#addCategoryButton').removeClass('d-block').hide();
         $('#addCategoryForm').show();
     });
 
+    // Show edit category form
     $('[id^="categoryButton-"]').click(function () {
         var categoryId = this.id.replace(/categoryButton-/, '');
 
         $('#tableHeader-' + categoryId).hide();
         $('#editCategory-' + categoryId).show();
+    });
+
+    // Show add daily meal form
+    $('#addDailyMealButton').click(function () {
+        $('#addDailyMealButton').hide();
+        $('#addDailyMealForm').show();
     });
 });
 
