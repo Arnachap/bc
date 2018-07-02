@@ -13926,6 +13926,14 @@ $(document).ready(function () {
         $('#addDailyMealButton').hide();
         $('#addDailyMealForm').show();
     });
+
+    // Show edit daily meal form
+    $('[id^="editMealButton-"]').click(function () {
+        var mealId = this.id.replace(/editMealButton-/, '');
+
+        $('#dailyMeal-' + mealId).hide();
+        $('#editMealForm-' + mealId).show();
+    });
 });
 
 /***/ }),

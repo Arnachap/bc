@@ -41,7 +41,21 @@ class DailyMealsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'date' => 'required',
+            'price' => 'required'
+        ]);
+
+        // Add daily meal
+        $meal = DailyMeal::find($id);
+        $meal->name = $request->input('name');
+        $meal->date = $request->input('date');
+        $meal->price = $request->input('price');
+        $meal->portion = $request->input('portion');
+        $meal->save();
+
+        return redirect('/boulish/meals')->with('success', 'Plat du jour modifié');
     }
 
     /**
@@ -52,6 +66,9 @@ class DailyMealsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $meal = DailyMeal::find($id);
+        $meal->delete();
+
+        return redirect('/boulish/meals')->with('succes', 'Plat du jour supprimé');
     }
 }

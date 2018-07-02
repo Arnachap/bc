@@ -36,7 +36,10 @@
                                         </div>
 
                                         <div class="card-footer bg-light">
-                                            <p class="text-muted">{{ $meal->price }} / {{ $meal->portion }}</p>
+                                            <p class="text-muted">{{ $meal->price }}€ 
+                                                @if(!empty($meal->portion))
+                                                    / {{ $meal->portion }}</p>
+                                                @endif
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +56,10 @@
                                         </div>
 
                                         <div class="card-footer bg-light">
-                                            <p class="text-muted">{{ $meal->price }} / {{ $meal->portion }}</p>
+                                            <p class="text-muted">{{ $meal->price }}€ 
+                                                @if(!empty($meal->portion))
+                                                    / {{ $meal->portion }}</p>
+                                                @endif
                                         </div>
                                     </div>
                                 </div>
