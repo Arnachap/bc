@@ -33,7 +33,7 @@ class BoulishController extends Controller
 
     public function meals()
     {
-        $dailyMeals = DailyMeal::all();
+        $dailyMeals = DailyMeal::orderBy('date', 'asc')->get();
 
         return view('boulish.meals')
             ->with('dailyMeals', $dailyMeals);

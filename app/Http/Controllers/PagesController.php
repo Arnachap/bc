@@ -12,7 +12,7 @@ use App\DailyMeal;
 class PagesController extends Controller
 {
     public function index() {
-        $dailyMeals = DailyMeal::all();
+        $dailyMeals = DailyMeal::orderBy('date', 'asc')->get();
 
         return view('pages.index')
             ->with('dailyMeals', $dailyMeals);
