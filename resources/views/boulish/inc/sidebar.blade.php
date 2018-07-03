@@ -1,4 +1,4 @@
-<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+<nav class="d-none d-md-block bg-light sidebar">
     <ul class="nav nav-pills flex-column">
         <li class="nav-item">
             <a class="nav-link {{ Request::is('boulish') ? 'active' : '' }}" href="/boulish">Accueil <span class="sr-only">(current)</span></a>

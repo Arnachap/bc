@@ -12,15 +12,23 @@
             <div class="row">
                 @guest
 
+                    @yield('content')
+
                 @else
 
-                    @include('boulish.inc.sidebar')
+                    <div class="col-md-2">
+                        @include('boulish.inc.sidebar')
+                    </div>
 
-                    @include('boulish.inc.messages')
+                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+                        @include('boulish.inc.messages')
+
+                        @yield('content')
+                        
+                    </main>
                     
                 @endguest
-
-                @yield('content')
 
             </div>
         </div>

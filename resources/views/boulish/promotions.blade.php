@@ -2,7 +2,6 @@
 
 @section('content')
 
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <h1 class="border-bottom">Promotions du moment</h1>
 
     <table class="table bg-white table-hover my-4">
@@ -46,6 +45,5 @@
             </tr>
         </tbody>
     </table>
-</main>
 
 @endsection

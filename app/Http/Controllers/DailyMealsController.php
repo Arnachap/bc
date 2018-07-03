@@ -69,6 +69,6 @@ class DailyMealsController extends Controller
         $meal = DailyMeal::find($id);
         $meal->delete();
 
-        return redirect('/boulish/meals')->with('succes', 'Plat du jour supprimé');
+        return redirect('/boulish/meals')->with('success', 'Plat du jour supprimé');
     }
 }

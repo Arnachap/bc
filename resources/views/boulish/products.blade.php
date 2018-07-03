@@ -2,7 +2,6 @@
 
 @section('content')
 
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <h1 class="border-bottom">Nos Produits</h1>
 
     @if(count($productCategories) > 0)
@@ -101,6 +100,5 @@
             @include('boulish.inc.addCategoryForm')
         {!! Form::close() !!}
     </table>
-</main>
 
 @endsection
