@@ -33,3 +33,4 @@ Route::resource('services', 'ServicesController');
 Route::resource('productCategories', 'ProductCategoriesController');
 Route::resource('servicesCategories', 'ServiceCategoriesController');
 Route::resource('dailyMeals', 'DailyMealsController');
+Route::resource('promotions', 'PromotionsController');

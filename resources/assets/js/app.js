@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -17,45 +16,59 @@ window.Vue = require('vue');
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-$(document).ready(function(){
+$(document).ready(function () {
     // Show add product form
-    $('[id^="addButton-"]').click(function() {
+    $('[id^="addButton-"]').click(function () {
         var categoryId = this.id.replace(/addButton-/, '');
-        
+
         $('#addButton-' + categoryId).hide();
         $('#addForm-' + categoryId).show();
     });
 
     // Show edit product form
-    $('.editButton').click(function() {
+    $('.editButton').click(function () {
         $('#editForm-' + this.id).show();
     });
 
     // Show add category form
-    $('#addCategoryButton').click(function() {
+    $('#addCategoryButton').click(function () {
         $('#addCategoryButton').removeClass('d-block').hide();
         $('#addCategoryForm').show();
     });
 
     // Show edit category form
-    $('[id^="categoryButton-"]').click(function() {
+    $('[id^="categoryButton-"]').click(function () {
         var categoryId = this.id.replace(/categoryButton-/, '');
-        
+
         $('#tableHeader-' + categoryId).hide();
         $('#editCategory-' + categoryId).show();
     });
 
     // Show add daily meal form
-    $('#addDailyMealButton').click(function() {
+    $('#addDailyMealButton').click(function () {
         $('#addDailyMealButton').hide();
         $('#addDailyMealForm').show();
     });
 
     // Show edit daily meal form
-    $('[id^="editMealButton-"]').click(function() {
+    $('[id^="editMealButton-"]').click(function () {
         var mealId = this.id.replace(/editMealButton-/, '');
 
         $('#dailyMeal-' + mealId).hide();
         $('#editMealForm-' + mealId).show();
     });
+
+    // Show add promotion form
+    $('#addPromoButton').click(function () {
+        $('#addPromoButton').hide();
+        $('#addPromoForm').show();
+    });
+
+    // Show edit promotion form
+    $('[id^="editPromoButton"]').click(function () {
+        var promoId = this.id.replace(/editPromoButton-/, '');
+
+        $('#promo-' + promoId).hide();
+        $('#editPromoForm-' + promoId).show();
+    })
 });

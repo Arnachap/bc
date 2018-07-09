@@ -8,14 +8,17 @@ use App\ProductCategory;
 use App\Service;
 use App\ServiceCategory;
 use App\DailyMeal;
+use App\Promotion;
 
 class PagesController extends Controller
 {
     public function index() {
         $dailyMeals = DailyMeal::orderBy('date', 'asc')->get();
+        $promotions = Promotion::all();
 
         return view('pages.index')
-            ->with('dailyMeals', $dailyMeals);
+            ->with('dailyMeals', $dailyMeals)
+            ->with('promotions', $promotions);
     }
 
     public function products() {

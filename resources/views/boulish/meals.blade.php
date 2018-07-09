@@ -16,14 +16,19 @@
                             <img class="card-img-top img-fluid" src="../img/plate1.jpg" alt="">
             
                             <div class="card-body">
-                                <h1 class="card-title pricing-card-title">{{ $meal->date }}</h1>
+                                <h2 class="card-title pricing-card-title">{{ $meal->date }}</h2>
             
                                 <ul class="list-unstyled mt-3 mb-4">
                                     <li>{{ $meal->name }}</li>
+
                                     <li>{{ $meal->price }}€ 
+
                                         @if(!empty($meal->portion))
+
                                             / {{ $meal->portion }}</p>
+
                                         @endif
+
                                     </li>
                                 </ul>
                             </div>
@@ -37,6 +42,7 @@
                                     <div class="col">
                                         {!! Form::open(['action' => ['DailyMealsController@destroy', $meal->id], 'method' => 'POST']) !!}
                                             {{ Form::hidden('_method', 'DELETE') }}
+
                                             {{ Form::button('<i class="fa fa-2x fa-trash text-danger"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
                                         {!! Form::close() !!}
                                     </div>
@@ -50,7 +56,9 @@
                             <div class="card-body text-center">
                                 {!! Form::open(['action' => ['DailyMealsController@update', $meal->id], 'method' => 'POST']) !!}
                                     {{ Form::date('date', $meal->date, ['class' => 'form-control my-2']) }}
+
                                     {{ Form::text('name', $meal->name, ['class' => 'form-control my-2', 'placeholder' => 'Nom du plat']) }}
+
                                     <div class="row">
                                         <div class="col">
                                             {{ Form::number('price', $meal->price, ['class' => 'form-control', 'placeholder' => 'Prix', 'step' => '0.01']) }}
@@ -60,7 +68,9 @@
                                             {{ Form::text('portion', $meal->portion, ['class' => 'form-control', 'placeholder' => 'Portion']) }}
                                         </div>
                                     </div>
+                                    
                                     {{ Form::hidden('_method', 'PUT') }}
+
                                     {{ Form::submit('Modifier le menu du jour', ['class' => 'btn btn-primary my-2']) }}
                                 {!! Form::close() !!}
                             </div>
@@ -83,8 +93,11 @@
 
                     <div id="addDailyMealForm" class="card-body text-center" style="display: none;">
                         {!! Form::open(['action' => 'DailyMealsController@store', 'method' => 'POST']) !!}
+
                             {{ Form::date('date', '', ['class' => 'form-control my-2']) }}
+
                             {{ Form::text('name', '', ['class' => 'form-control my-2', 'placeholder' => 'Nom du plat']) }}
+
                             <div class="row">
                                 <div class="col">
                                     {{ Form::number('price', '', ['class' => 'form-control', 'placeholder' => 'Prix', 'step' => '0.01']) }}
@@ -94,7 +107,9 @@
                                     {{ Form::text('portion', '', ['class' => 'form-control', 'placeholder' => 'Portion']) }}
                                 </div>
                             </div>
-                            {{ Form::submit('Ajouter aux menus du jour', ['class' => 'btn btn-primary my-2']) }}
+
+                            {{ Form::submit('Ajouter aux menus du jour', ['class' => 'btn btn-primary mt-4']) }}
+
                         {!! Form::close() !!}
                     </div>
                 </div>

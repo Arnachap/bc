@@ -13874,7 +13874,6 @@ module.exports = __webpack_require__(39);
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -13933,6 +13932,20 @@ $(document).ready(function () {
 
         $('#dailyMeal-' + mealId).hide();
         $('#editMealForm-' + mealId).show();
+    });
+
+    // Show add promotion form
+    $('#addPromoButton').click(function () {
+        $('#addPromoButton').hide();
+        $('#addPromoForm').show();
+    });
+
+    // Show edit promotion form
+    $('[id^="editPromoButton"]').click(function () {
+        var promoId = this.id.replace(/editPromoButton-/, '');
+
+        $('#promo-' + promoId).hide();
+        $('#editPromoForm-' + promoId).show();
     });
 });
 

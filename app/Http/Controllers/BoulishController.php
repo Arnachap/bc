@@ -8,6 +8,7 @@ use App\ProductCategory;
 use App\Service;
 use App\ServiceCategory;
 use App\DailyMeal;
+use App\Promotion;
 
 class BoulishController extends Controller
 {
@@ -41,7 +42,10 @@ class BoulishController extends Controller
 
     public function promotions()
     {
-        return view('boulish.promotions');
+        $promotions = Promotion::all();
+
+        return view('boulish.promotions')
+            ->with('promotions', $promotions);
     }
 
     public function products()

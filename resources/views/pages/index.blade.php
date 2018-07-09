@@ -91,25 +91,20 @@
 
         <div class="col-md-4 px-5">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Hachi
-                    <span class="badge-primary badge-pill">5€ / portion</span>
-                </li>
 
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Entrecôte
-                    <span class="badge-primary badge-pill">10€ les 100gr</span>
-                </li>
+                @if(count($promotions) > 0)
 
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Filet de boeuf
-                    <span class="badge-primary badge-pill">12€ les 150gr</span>
-                </li>
+                    @foreach($promotions as $promo)
 
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Pinces de crabe
-                    <span class="badge-primary badge-pill">7€ les deux</span>
-                </li>
+                        <li class="list-group-item text-center">
+                            <h3>{{ $promo->name }}</h3>
+                            <p>{{ $promo->description }}</p>
+                        </li>
+
+                    @endforeach
+
+                @endif
+
             </ul>
         </div>
     </div>
