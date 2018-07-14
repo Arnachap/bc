@@ -1,0 +1,70 @@
+.mainNav {
+  background-color: #fff;
+  * {
+    box-sizing: border-box;
+  }
+  .navbar-brand {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: $title;
+    color: $red;
+    &:hover {
+      color: $black;
+    }
+  }
+  .nav-link {
+    font-size: 20px;
+    font-family: $text;
+    color: $black;
+    position: relative;
+    padding: 5px 0;
+    letter-spacing: 1px;
+    text-align: center;
+    &:hover {
+      color: $red;
+    }
+    &:before,
+    &:after {
+      position: absolute;
+      transition: all 0.35s ease;
+    }
+    &:before {
+      bottom: 0;
+      display: block;
+      height: 4px;
+      width: 0%;
+      content: "";
+      background-color: $red;
+    }
+    &:after {
+      left: 0;
+      top: 0;
+      padding: 0.5em 0;
+      position: absolute;
+      content: attr(data-hover);
+      color: $red;
+      white-space: nowrap;
+      max-width: 0%;
+      overflow: hidden;
+    }
+    &:hover:before {
+      opacity: 1;
+      width: 90%;
+    }
+    &:hover:after {
+      max-width: 90%;
+    }
+  }
+  .current {
+    .nav-link {
+      color: $red;
+      &:before {
+        opacity: 1;
+        width: 90%;
+      }
+      &:after {
+        max-width: 90%;
+      }
+    }
+  }
+}
