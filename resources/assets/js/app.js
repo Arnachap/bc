@@ -17,6 +17,27 @@ window.Vue = require('vue');
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 $(document).ready(function () {
+
+    /*
+     **  Animations
+     */
+
+    // Navbar color change on scroll
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        if (scroll > 1) {
+            $('.mainNav').css('background-color', '#fff');
+            $('.nav-link').css('color', '#272727');
+        } else {
+            $('.mainNav').css('background-color', '#272727');
+            $('.nav-link').css('color', '#fff');
+        }
+    });
+
+    /*
+     **  Product and services form IDs
+     */
+
     // Show add product form
     $('[id^="addButton-"]').click(function () {
         var categoryId = this.id.replace(/addButton-/, '');

@@ -2,15 +2,40 @@
 
 @section('content')
 
-<div class="container-fluid p-0">
-    <div class="position-relative overflow-hidden py-5 text-center text-light bg-dark" style="height: 60vh;">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">Slider</h1>
-            <p class="lead font-weight-normal">Vers autres pages, promos, plats du jour, etc...</p>
-            <a class="btn btn-outline-light" href="#">Avec bouton</a>
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/random')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>First Slide</h3>
+            <p>This is a description for the first slide.</p>
+          </div>
         </div>
+        
+        <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Second Slide</h3>
+            <p>This is a description for the second slide.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random')">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Third Slide</h3>
+            <p>This is a description for the third slide.</p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+</header>
 
 <div class="container">
     <div class="row py-5">
