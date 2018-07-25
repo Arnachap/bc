@@ -13,24 +13,26 @@
       </ol>
 
       <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/random')">
+        <div class="carousel-item active" style="background-image: url('../img/boulish.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>First Slide</h3>
-            <p>This is a description for the first slide.</p>
+            <h1>Boucherie Centrale</h1>
+            <p>Boucher, charcutier, traiteur par passion depuis 19xx.</p>
           </div>
         </div>
         
-        <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random')">
+        <div class="carousel-item" style="background-image: url('../img/1.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Second Slide</h3>
-            <p>This is a description for the second slide.</p>
+            <h3>Nos produit</h3>
+            <p>Chaque jour, retrouvez nos produits frais et de qualité, élaboré sur place.</p>
+            <a href="/nos-produits" class="btn btn-lg btn-primary">Voir nos produits</a>
           </div>
         </div>
 
-        <div class="carousel-item" style="background-image: url('https://source.unsplash.com/random')">
+        <div class="carousel-item" style="background-image: url('../img/toast&champ.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <h3>Third Slide</h3>
-            <p>This is a description for the third slide.</p>
+            <h3>Service Traiteur</h3>
+            <p>Un service unique pour toutes les occasions !</p>
+            <a href="/service-traiteur" class="btn btn-lg btn-primary">Voir nos menus</a>
           </div>
         </div>
       </div>

@@ -1,3 +1,31 @@
+/*
+**  Preset
+*/
+
+h1,
+h2,
+h3 {
+  font-family: $title;
+}
+
+p,
+a {
+  font-family: $text;
+}
+
+.btn-primary {
+  background-color: $red;
+  border-color: $red;
+  &:hover {
+    background-color: $redfocus;
+    border-color: $redfocus;
+  }
+}
+
+/*
+**  Navbar
+*/
+
 .mainNav {
   background-color: $black;
   transition: background-color 0.3s ease;
@@ -9,8 +37,9 @@
     font-weight: 700;
     font-family: $title;
     color: $red;
+    transition: color 0.3s ease;
     &:hover {
-      color: $black;
+      color: $white;
     }
   }
   .nav-link {
@@ -33,7 +62,7 @@
     &:before {
       bottom: 0;
       display: block;
-      height: 4px;
+      height: 3px;
       width: 0%;
       content: "";
       background-color: $red;
@@ -71,6 +100,10 @@
   }
 }
 
+/*
+**  Header
+*/
+
 header {
   margin-top: -3rem;
   .carousel-item {
@@ -81,5 +114,31 @@ header {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    .carousel-caption {
+      left: 0;
+      top: 0;
+      padding-top: 20vh;
+      padding-left: 16px;
+      height: 100vh;
+      width: 400px;
+      background: linear-gradient( to right, rgba($color: black, $alpha: 1), rgba($color: black, $alpha: 0.2) 90%, transparent);
+      * {
+        max-width: 90%;
+      }
+      h1,
+      h3 {
+        text-align: left;
+        font-size: 80px;
+      }
+      p {
+        margin: 60px 0;
+        text-align: left;
+        font-size: 30px;
+      }
+      a {
+        font-weight: 700;
+        margin-left: -80px;
+      }
+    }
   }
 }
