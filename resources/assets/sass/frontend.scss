@@ -2,10 +2,15 @@
 **  Preset
 */
 
+::selection {
+  background: $redfocus;
+}
+
 h1,
 h2,
 h3 {
   font-family: $title;
+  font-weight: 700;
 }
 
 p,
@@ -36,7 +41,7 @@ a {
     font-size: 30px;
     font-weight: 700;
     font-family: $title;
-    color: $red;
+    color: $redfocus;
     transition: color 0.3s ease;
     &:hover {
       color: $white;
@@ -52,7 +57,7 @@ a {
     text-align: center;
     transition: color 0.3s ease;
     &:hover {
-      color: $red;
+      color: $redfocus;
     }
     &:before,
     &:after {
@@ -65,7 +70,7 @@ a {
       height: 3px;
       width: 0%;
       content: "";
-      background-color: $red;
+      background-color: $redfocus;
     }
     &:after {
       left: 0;
@@ -73,7 +78,7 @@ a {
       padding: 0.5em 0;
       position: absolute;
       content: attr(data-hover);
-      color: $red;
+      color: $redfocus;
       white-space: nowrap;
       max-width: 0%;
       overflow: hidden;
@@ -137,8 +142,45 @@ header {
       }
       a {
         font-weight: 700;
-        margin-left: -80px;
+        margin-left: -100px;
       }
     }
+  }
+}
+
+/*
+**  Intro
+*/
+
+#intro {
+  padding: 80px 0;
+  .frame {
+    padding: 16px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    img {
+      max-width: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    &:before {
+      z-index: -1;
+      position: absolute;
+      content: '';
+      opacity: 1;
+      border: 6px solid $red;
+      bottom: 32px;
+      right: 32px;
+      top: 0px;
+      left: 0px;
+    }
+  }
+  h2 {
+    margin-bottom: 10px;
+    color: $red;
+  }
+  p {
+    color: $grey;
+    line-height: 25px;
   }
 }

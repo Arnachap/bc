@@ -31,7 +31,7 @@ $(document).ready(function () {
             $('.nav-link')
                 .css('color', '#272727')
                 .hover(function () {
-                    $(this).css('color', '#872428');
+                    $(this).css('color', '#b53035');
                 }, function () {
                     $(this).css('color', '#272727');
                 });
@@ -39,7 +39,7 @@ $(document).ready(function () {
             $('.navbar-brand').hover(function () {
                 $(this).css('color', '#272727');
             }, function () {
-                $(this).css('color', '#872428');
+                $(this).css('color', '#b53035');
             });
         } else {
             $('.mainNav').css('background-color', '#272727');
@@ -47,7 +47,7 @@ $(document).ready(function () {
             $('.nav-link')
                 .css('color', '#fff')
                 .hover(function () {
-                    $(this).css('color', '#872428');
+                    $(this).css('color', '#b53035');
                 }, function () {
                     $(this).css('color', '#fff');
                 });;
@@ -55,7 +55,7 @@ $(document).ready(function () {
             $('.navbar-brand').hover(function () {
                 $(this).css('color', '#fff');
             }, function () {
-                $(this).css('color', '#872428');
+                $(this).css('color', '#b53035');
             });
         }
     });

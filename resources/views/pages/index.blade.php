@@ -17,6 +17,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h1>Boucherie Centrale</h1>
             <p>Boucher, charcutier, traiteur par passion depuis 19xx.</p>
+            <a href="#intro" class="btn btn-lg btn-primary">Plus d'infos</a>
           </div>
         </div>
         
@@ -38,6 +39,21 @@
       </div>
     </div>
 </header>
+
+<div id="intro" class="container">
+    <div class="row">
+        <div class="col-md-5 align-self-start">
+            <div class="frame">
+                <img src="./img/foiegras.jpg" class="img-fluid" alt="">
+            </div>
+        </div>
+
+        <div class="col-md-7 align-self-center">
+            <h2>Bienvenue !</h2>
+            <p>La <i>Boucherie Centrale</i> de Malzéville vous propose chaque jours des produits frais, élaborés sur place. De la viande au fromage, en passant par les vins et accompagnements en tous genres, notre équipe met en oeuvre tout son savoir-faire pour créer des mets d'une qualité inégalable.</p>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row py-5">
