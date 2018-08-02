@@ -2,15 +2,19 @@
 **  Preset
 */
 
+* {
+  box-sizing: border-box;
+}
+
 ::selection {
   background: $redfocus;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: $title;
-  font-weight: 700;
 }
 
 p,
@@ -18,7 +22,21 @@ a {
   font-family: $text;
 }
 
+.btn {
+  border-radius: 0px;
+  border-width: 2px;
+}
+
 .btn-primary {
+  background-color: transparent;
+  border-color: $red;
+  &:hover {
+    background-color: $redfocus;
+    border-color: $redfocus;
+  }
+}
+
+.btn-secondary {
   background-color: $red;
   border-color: $red;
   &:hover {
@@ -39,7 +57,6 @@ a {
   }
   .navbar-brand {
     font-size: 30px;
-    font-weight: 700;
     font-family: $title;
     color: $redfocus;
     transition: color 0.3s ease;
@@ -133,15 +150,14 @@ header {
       h1,
       h3 {
         text-align: left;
-        font-size: 80px;
+        font-size: 75px;
       }
       p {
         margin: 60px 0;
         text-align: left;
-        font-size: 30px;
+        font-size: 20px;
       }
       a {
-        font-weight: 700;
         margin-left: -100px;
       }
     }
@@ -152,7 +168,7 @@ header {
 **  Intro
 */
 
-#intro {
+.intro {
   padding: 80px 0;
   .frame {
     padding: 16px;
@@ -163,16 +179,26 @@ header {
       max-width: 100%;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-    &:before {
+    &:before,
+    &:after {
       z-index: -1;
       position: absolute;
       content: '';
-      opacity: 1;
+      opacity: 0.6;
+    }
+    &#frame1:before {
       border: 6px solid $red;
       bottom: 32px;
       right: 32px;
       top: 0px;
       left: 0px;
+    }
+    &#frame2:after {
+      border: 6px solid $red;
+      bottom: 0px;
+      right: 0px;
+      top: 32px;
+      left: 32px;
     }
   }
   h2 {
@@ -182,5 +208,62 @@ header {
   p {
     color: $grey;
     line-height: 25px;
+  }
+  .btn-primary {
+    color: $red;
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+/*
+** Maps
+*/
+
+#maps {
+  padding: 0;
+  background-color: $black;
+  iframe {
+    border: 0;
+    width: 100%;
+    height: 450px;
+  }
+}
+
+/*
+** Footer
+*/
+
+footer {
+  background-color: $black;
+  color: $grey;
+  padding: 80px 0;
+  h4 {
+    font-size: 20px;
+    color: $redfocus;
+    margin-bottom: 20px;
+  }
+  ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+    li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 8px;
+      i {
+        position: absolute;
+        left: 0;
+        top: 6px;
+      }
+    }
+  }
+  .openDays {
+    font-weight: 700;
+    line-height: 20px;
+  }
+  .openTime {
+    line-height: 30px;
   }
 }

@@ -13,15 +13,15 @@
       </ol>
 
       <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" style="background-image: url('../img/boulish.jpg')">
+        <div class="carousel-item active" style="background-image: url('../img/slide_1.jpg')">
           <div class="carousel-caption d-none d-md-block">
             <h1>Boucherie Centrale</h1>
             <p>Boucher, charcutier, traiteur par passion depuis 19xx.</p>
-            <a href="#intro" class="btn btn-lg btn-primary">Plus d'infos</a>
+            <a data-scroll href="#intro" class="btn btn-lg btn-primary js-trigger">Plus d'infos</a>
           </div>
         </div>
         
-        <div class="carousel-item" style="background-image: url('../img/1.jpg')">
+        <div class="carousel-item" style="background-image: url('../img/slide_2.jpg')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Nos produit</h3>
             <p>Chaque jour, retrouvez nos produits frais et de qualité, élaboré sur place.</p>
@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <div class="carousel-item" style="background-image: url('../img/toast&champ.jpg')">
+        <div class="carousel-item" style="background-image: url('../img/slide_3.jpg')">
           <div class="carousel-caption d-none d-md-block">
             <h3>Service Traiteur</h3>
             <p>Un service unique pour toutes les occasions !</p>
@@ -40,20 +40,39 @@
     </div>
 </header>
 
-<div id="intro" class="container">
-    <div class="row">
-        <div class="col-md-5 align-self-start">
-            <div class="frame">
-                <img src="./img/foiegras.jpg" class="img-fluid" alt="">
+<section id="intro">
+    <div class="container intro">
+        <div class="row">
+            <div class="col-md-5 align-self-start">
+                <div id="frame1" class="frame">
+                    <img src="./img/intro_1.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-7 align-self-center">
+                <h2>Bienvenue !</h2>
+                <p>La <i>Boucherie Centrale</i> de Malzéville vous propose chaque jours des produits frais, élaborés sur place. De la viande au fromage, en passant par les vins et accompagnements en tous genres, notre équipe met en oeuvre tout son savoir-faire pour créer des mets d'une qualité inégalable.</p>
             </div>
         </div>
-
-        <div class="col-md-7 align-self-center">
-            <h2>Bienvenue !</h2>
-            <p>La <i>Boucherie Centrale</i> de Malzéville vous propose chaque jours des produits frais, élaborés sur place. De la viande au fromage, en passant par les vins et accompagnements en tous genres, notre équipe met en oeuvre tout son savoir-faire pour créer des mets d'une qualité inégalable.</p>
+    </div>
+    
+    <div class="container intro">
+        <div class="row">
+            <div class="col-md-7 align-self-center">
+                <h2>Notre Service Traiteur</h2>
+                <p>En plus de ses produits traditionnels, le service traiteur de la <i>Boucherie Centrale</i> vous permet d'ajouter une touche de saveur unique à chacun de vos évènements.</p>
+                <a href="/service-traiteur" class="btn btn-secondary">Voir nos menus</a>
+                <a href="/service-traiteur" class="btn btn-primary">Demander un devis</a>
+            </div>
+    
+            <div class="col-md-5 align-self-start">
+                <div id="frame2" class="frame">
+                    <img src="./img/intro_2.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
 <div class="container">
     <div class="row py-5">
@@ -152,5 +171,7 @@
         </div>
     </div>
 </div>
+
+@include('inc.maps')
 
 @endsection

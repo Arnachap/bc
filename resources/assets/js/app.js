@@ -22,6 +22,12 @@ $(document).ready(function () {
      **  Animations
      */
 
+    // Initialize smooth scroll
+    var scroll = new SmoothScroll('a[href*="#"]', {
+        speed: 1000,
+        easing: 'easeInQuart',
+    });
+
     // Navbar color change on scroll
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
@@ -29,20 +35,20 @@ $(document).ready(function () {
             $('.mainNav').css('background-color', '#fff');
 
             $('.nav-link')
-                .css('color', '#272727')
+                .css('color', '#151515')
                 .hover(function () {
                     $(this).css('color', '#b53035');
                 }, function () {
-                    $(this).css('color', '#272727');
+                    $(this).css('color', '#151515');
                 });
 
             $('.navbar-brand').hover(function () {
-                $(this).css('color', '#272727');
+                $(this).css('color', '#151515');
             }, function () {
                 $(this).css('color', '#b53035');
             });
         } else {
-            $('.mainNav').css('background-color', '#272727');
+            $('.mainNav').css('background-color', '#151515');
 
             $('.nav-link')
                 .css('color', '#fff')
