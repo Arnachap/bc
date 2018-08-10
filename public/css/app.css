@@ -13536,10 +13536,12 @@ a.text-dark:focus {
 }
 
 ::-moz-selection {
+  color: #fff;
   background: #b53035;
 }
 
 ::selection {
+  color: #fff;
   background: #b53035;
 }
 
@@ -13555,6 +13557,10 @@ a {
   font-family: "Lato", sans-serif;
 }
 
+section {
+  background-color: #fff;
+}
+
 .btn {
   border-radius: 0px;
   border-width: 2px;
@@ -13566,6 +13572,17 @@ a {
 }
 
 .btn-primary:hover {
+  background-color: #b53035;
+  border-color: #b53035;
+}
+
+.btn-primary:active {
+  background-color: #b53035;
+  border-color: #b53035;
+}
+
+.btn-primary:focus {
+  outline: 0 !important;
   background-color: #b53035;
   border-color: #b53035;
 }
@@ -13608,13 +13625,15 @@ a {
 }
 
 .mainNav .nav-link {
-  font-size: 20px;
+  font-size: 12px;
   font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
   color: #fff;
   position: relative;
-  padding: 5px 0;
-  letter-spacing: 1px;
-  text-align: center;
+  padding: 5px 10px;
+  margin-top: 10px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
@@ -13744,7 +13763,7 @@ header .carousel-item .carousel-caption a {
 .intro .frame:after {
   z-index: -1;
   position: absolute;
-  content: '';
+  content: "";
   opacity: 0.6;
 }
 
@@ -13783,7 +13802,140 @@ header .carousel-item .carousel-caption a {
 }
 
 /*
-** Maps
+** Banner
+*/
+
+#banner {
+  background-color: transparent;
+  margin: 50px 0;
+  min-height: 500px;
+  position: relative;
+}
+
+#banner-img {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 150%;
+  top: -5px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  z-index: -1;
+}
+
+/*
+**  Offers
+*/
+
+#offers {
+  padding: 80px 0;
+}
+
+#offers h2 {
+  text-align: center;
+  color: #872428;
+}
+
+#offers p.intro {
+  padding: 20px 0;
+  text-align: center;
+  color: #777;
+}
+
+#offers nav ul {
+  list-style: none;
+  display: block;
+  text-align: center;
+}
+
+#offers nav ul li {
+  position: relative;
+  display: inline-block;
+  color: #777;
+  padding: 14px;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+#offers nav ul li:after {
+  position: absolute;
+  bottom: 5px;
+  left: 10%;
+  content: "";
+  height: 3px;
+  width: 80%;
+  background-color: transparent;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+#offers nav ul li.active {
+  color: #151515;
+}
+
+#offers nav ul li.active:after {
+  background-color: #872428;
+}
+
+#offers #mealOffers .mealRow {
+  padding: 15px 0;
+  border-bottom: 1px solid #777;
+}
+
+#offers #mealOffers .mealRow .mealDate {
+  color: #872428;
+  font-size: 22px;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
+
+#offers #mealOffers .mealRow .mealInfo h4 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+#offers #mealOffers .mealRow .mealInfo p {
+  color: #777;
+}
+
+#offers #mealOffers .mealRow .mealPrice {
+  font-size: 18px;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+}
+
+#offers #promoOffers {
+  display: none;
+}
+
+#offers #promoOffers .promoRow {
+  padding: 15px 0;
+  border-bottom: 1px solid #777;
+}
+
+#offers #promoOffers .promoRow .promoInfo {
+  text-align: center;
+}
+
+#offers #promoOffers .promoRow .promoInfo h4 {
+  color: #872428;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+#offers #promoOffers .promoRow .promoInfo p {
+  color: #777;
+}
+
+/*
+**  Maps
 */
 
 #maps {
@@ -13792,6 +13944,7 @@ header .carousel-item .carousel-caption a {
 }
 
 #maps iframe {
+  z-index: 3;
   border: 0;
   width: 100%;
   height: 450px;

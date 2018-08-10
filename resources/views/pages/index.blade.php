@@ -74,103 +74,85 @@
     </div>
 </section>
 
-<div class="container">
-    <div class="row py-5">
-        <div class="col-md-4 px-5 text-center">
-            <h2 class="pb-3">Plats du jour</h2>
+<section id="banner">
+    <div id="banner-img" class="js-parallax" style="background-image: url(/../img/banner.jpg);"></div>
+</section>
 
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-
-                    @if(count($dailyMeals) > 0)
-
-                        @foreach($dailyMeals as $meal)
-
-                            @if($loop->first)
-
-                                <div class="carousel-item active">
-                                    <div class="card">
-                                        <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ Carbon\Carbon::parse($meal->date)->format('d F') }}</h5>
-
-                                            <p class="card-text">{{ $meal->name }}</p>
-                                        </div>
-
-                                        <div class="card-footer bg-light">
-                                            <p class="text-muted">{{ $meal->price }}€ 
-                                                @if(!empty($meal->portion))
-                                                    / {{ $meal->portion }}</p>
-                                                @endif
-                                        </div>
-                                    </div>
-                                </div>
-
-                            @else
-
-                                <div class="carousel-item">
-                                    <div class="card">
-                                        <img class="card-img-top" src="./img/plate1.jpg" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ Carbon\Carbon::parse($meal->date)->format('d F') }}</h5>
-
-                                            <p class="card-text">{{ $meal->name }}</p>
-                                        </div>
-
-                                        <div class="card-footer bg-light">
-                                            <p class="text-muted">{{ $meal->price }}€ 
-                                                @if(!empty($meal->portion))
-                                                    / {{ $meal->portion }}</p>
-                                                @endif
-                                        </div>
-                                    </div>
-                                </div>
-
-                            @endif
-                                    
-                        @endforeach
-
-                    @endif
-                
-                </div>
-
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+<section id="offers">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Nos offres du moments</h2>
+                <p class="intro">Chaque jour, retrouvez nos plats du jour et nos promotions !</p>
             </div>
         </div>
 
-        <div class="col-md-4 px-5">
-            <h2 class="text-center">Bienvenue !</h2>
-            <p>Message de bienvenue, présentation, infos, horaires, adresse...</p>
+        <div class="row">
+            <div class="col">
+                <nav>
+                    <ul>
+                        <li id="mealOffersLink" class="offersLink active">Plats du jour</li>
+                        <li id="promoOffersLink" class="offersLink">Promotions</li>
+                    </ul>
+                </nav>
+            </div>
         </div>
 
-        <div class="col-md-4 px-5">
-            <ul class="list-group list-group-flush">
+        <div id="mealOffers" class="row">
 
-                @if(count($promotions) > 0)
+            @if(count($dailyMeals) > 0)
 
-                    @foreach($promotions as $promo)
+                @foreach($dailyMeals as $meal)
+                
+                    <div class="col-md-6 offset-md-3">
+                        <div class="row mealRow">
+                            <div class="col-3 mealDate">
+                                {{ Carbon\Carbon::parse($meal->date)->format('d') }}
+                                <br>{{ Carbon\Carbon::parse($meal->date)->format('F') }}
+                            </div>
 
-                        <li class="list-group-item text-center">
-                            <h3>{{ $promo->name }}</h3>
-                            <p>{{ $promo->description }}</p>
-                        </li>
+                            <div class="col-6 mealInfo">
+                                <h4>{{ $meal->name }}</h4>
+                                <p>Feuilleté, et accompagné de sa sauce béchamel</p>
+                            </div>
 
-                    @endforeach
+                            <div class="col-3 mealPrice">
+                                {{ $meal->price }}€ 
+                                @if(!empty($meal->portion))
+                                    / {{ $meal->portion }}</p>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
 
-                @endif
+                @endforeach
+            
+            @endif
 
-            </ul>
+        </div>
+
+        <div id="promoOffers" class="row">
+
+            @if(count($promotions) > 0)
+
+                @foreach($promotions as $promo)
+                
+                    <div class="col-md-6 offset-md-3">
+                        <div class="row promoRow">
+                            <div class="col promoInfo">
+                                <h4>{{ $promo->name }}</h4>
+                                <p>{{ $promo->description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                @endforeach
+            
+            @endif
+
         </div>
     </div>
-</div>
+</section>
 
 @include('inc.maps')
 

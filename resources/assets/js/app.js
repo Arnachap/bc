@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+var Parallax = require('parallax-scroll');
 
 window.Vue = require('vue');
 
@@ -65,6 +66,28 @@ $(document).ready(function () {
             });
         }
     });
+
+    // Parallax
+    const parallax = new Parallax('.js-parallax', {
+        speed: 0.4
+    });
+    parallax.animate();
+
+    // Offers active state
+    $('.offersLink').click(function () {
+        if (!$(this).hasClass('active')) {
+            $('.offersLink').toggleClass('active');
+        }
+        if ($('#mealOffersLink').hasClass('active')) {
+            $('#mealOffers').show(100);
+            $('#promoOffers').hide(100);
+        } else {
+            $('#mealOffers').hide(100);
+            $('#promoOffers').show(100);
+        }
+    });
+
+
 
     /*
      **  Product and services form IDs
