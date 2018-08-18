@@ -14129,11 +14129,11 @@ $(document).ready(function () {
             $('.offersLink').toggleClass('active');
         }
         if ($('#mealOffersLink').hasClass('active')) {
-            $('#mealOffers').show(100);
-            $('#promoOffers').hide(100);
+            $('#mealOffers').show(200);
+            $('#promoOffers').hide(200);
         } else {
-            $('#mealOffers').hide(100);
-            $('#promoOffers').show(100);
+            $('#mealOffers').hide(200);
+            $('#promoOffers').show(200);
         }
     });
 

@@ -41,7 +41,7 @@
 </header>
 
 <section id="intro">
-    <div class="container intro">
+    <div class="container">
         <div class="row">
             <div class="col-md-5 align-self-start">
                 <div id="frame1" class="frame">

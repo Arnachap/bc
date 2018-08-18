@@ -13530,6 +13530,10 @@ a.text-dark:focus {
 **  Preset
 */
 
+body {
+  background-color: #151515;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -13742,32 +13746,34 @@ header .carousel-item .carousel-caption a {
 **  Intro
 */
 
-.intro {
+#intro {
   padding: 80px 0;
 }
 
-.intro .frame {
+#intro .frame {
   padding: 16px;
   position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.intro .frame img {
+#intro .frame img {
+  position: relative;
+  z-index: 1;
   max-width: 100%;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.intro .frame:before,
-.intro .frame:after {
-  z-index: -1;
+#intro .frame:before,
+#intro .frame:after {
+  z-index: 0;
   position: absolute;
   content: "";
   opacity: 0.6;
 }
 
-.intro .frame#frame1:before {
+#intro .frame#frame1:before {
   border: 6px solid #872428;
   bottom: 32px;
   right: 32px;
@@ -13775,7 +13781,7 @@ header .carousel-item .carousel-caption a {
   left: 0px;
 }
 
-.intro .frame#frame2:after {
+#intro .frame#frame2:after {
   border: 6px solid #872428;
   bottom: 0px;
   right: 0px;
@@ -13783,21 +13789,21 @@ header .carousel-item .carousel-caption a {
   left: 32px;
 }
 
-.intro h2 {
+#intro h2 {
   margin-bottom: 10px;
   color: #872428;
 }
 
-.intro p {
-  color: #777;
+#intro p {
+  color: #999999;
   line-height: 25px;
 }
 
-.intro .btn-primary {
+#intro .btn-primary {
   color: #872428;
 }
 
-.intro .btn-primary:hover {
+#intro .btn-primary:hover {
   color: #fff;
 }
 
@@ -13842,7 +13848,7 @@ header .carousel-item .carousel-caption a {
 #offers p.intro {
   padding: 20px 0;
   text-align: center;
-  color: #777;
+  color: #999999;
 }
 
 #offers nav ul {
@@ -13854,7 +13860,7 @@ header .carousel-item .carousel-caption a {
 #offers nav ul li {
   position: relative;
   display: inline-block;
-  color: #777;
+  color: #999999;
   padding: 14px;
   font-size: 12px;
   text-align: center;
@@ -13886,7 +13892,7 @@ header .carousel-item .carousel-caption a {
 
 #offers #mealOffers .mealRow {
   padding: 15px 0;
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid #999999;
 }
 
 #offers #mealOffers .mealRow .mealDate {
@@ -13902,7 +13908,7 @@ header .carousel-item .carousel-caption a {
 }
 
 #offers #mealOffers .mealRow .mealInfo p {
-  color: #777;
+  color: #999999;
 }
 
 #offers #mealOffers .mealRow .mealPrice {
@@ -13917,7 +13923,7 @@ header .carousel-item .carousel-caption a {
 
 #offers #promoOffers .promoRow {
   padding: 15px 0;
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid #999999;
 }
 
 #offers #promoOffers .promoRow .promoInfo {
@@ -13931,7 +13937,7 @@ header .carousel-item .carousel-caption a {
 }
 
 #offers #promoOffers .promoRow .promoInfo p {
-  color: #777;
+  color: #999999;
 }
 
 /*
@@ -13951,12 +13957,105 @@ header .carousel-item .carousel-caption a {
 }
 
 /*
-** Footer
+**  Products
+*/
+
+.products {
+  padding: 40px 0;
+}
+
+.products h1 {
+  text-align: center;
+  color: #151515;
+  padding: 20px 0;
+}
+
+.products .card {
+  border: none;
+}
+
+.products .card .card-header {
+  border: 0.5px solid white;
+  border-radius: 0;
+  background-color: #872428;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+  padding: 6px 12px;
+}
+
+.products .card .card-header small {
+  margin-left: 16px;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+}
+
+.products .card .card-header i {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  float: right;
+  margin-top: 8px;
+}
+
+.products .card .card-header.collapsed i {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.products .card .card-body {
+  border: none;
+  padding: 0;
+}
+
+.products .card .card-body ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.products .card .card-body ul li {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  padding: 8px;
+  border-bottom: 1px solid #cccccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Playfair Display", serif;
+}
+
+.products .card .card-body ul li:hover {
+  background-color: #cccccc;
+}
+
+.products .card .card-body ul li .product-name {
+  font-size: 22px;
+}
+
+.products .card .card-body ul li .product-name small {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  color: #999999;
+  margin-left: 4px;
+}
+
+.products .card .card-body ul li .product-price {
+  font-size: 18px;
+}
+
+/*
+**  Footer
 */
 
 footer {
   background-color: #151515;
-  color: #777;
+  color: #999999;
   padding: 80px 0;
 }
 

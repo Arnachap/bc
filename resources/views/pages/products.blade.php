@@ -2,65 +2,62 @@
 
 @section('content')
 
-<div class="container">
-  <h1 class="text-center my-4">Nos produits</h1>
+<section class="products">
+  <div class="container">
+    <h1>Nos produits</h1>
 
-  @foreach($productCategories as $category)
+    <div class="accordion" id="productCards">
 
-    <table class="table bg-white table-hover my-4">
-      <thead>
-        <tr class="bg-dark text-white">
-          <th scope="col" style="width: 88%;">{{ $category->name }} 
-            <small class="ml-3">{{ $category->description }}</small>
-          </th>
+      @foreach($productCategories as $category)
 
-          <th class="text-right" style="width: 12%;">Prix</th>
-        </tr>
-      </thead>
+        <div class="card">
+          <div class="card-header collapsed" id="heading-{{ $category->id }}" data-toggle="collapse" data-target="#collapse-{{ $category->id }}" aria-expanded="true" aria-controls="collapse-{{ $category->id }}">
+            {{ $category->name }}
+            <small>{{ $category->description }}</small>
+            <i class="fa fa-angle-up"></i>
+          </div>
 
-      <tbody>
+          <div id="collapse-{{ $category->id }}" class="collapse" aria-labelledby="heading-{{ $category->id }}" data-parent="#productCards">
+            <div class="card-body">
+              <ul>
 
-        @if(count($products) > 0)
+                @if(count($products) > 0)
 
-          @foreach($products as $product)
+                  @foreach($products as $product)
 
-            @if($product->category_id == $category->id)
-            
-              <tr>
-                <th scope="row">
-                  {{ $product->name }}
+                    @if($product->category_id == $category->id)
 
-                  @if(!empty($product->description))
+                      <li>
+                        <div class="product-name">
+                          {{ $product->name }}
+                          <small> ({{ $product->description }})</small>
+                        </div>
 
-                    <small> ({{ $product->description }})</small>
-
-                  @endif
-
-                </th>
+                        <div class="product-price">
+                          {{ $product->price }}€ 
+                      
+                          @if(!empty($product->portion))
         
-                <td class="text-right">
-                  {{ $product->price }}€ 
+                            / {{ $product->portion }}
+        
+                          @endif
+                        </div>
+                      </li>
+
+                    @endif
                   
-                  @if(!empty($product->portion))
+                  @endforeach
 
-                    / {{ $product->portion }}
+                @endif
+              </ul>
+            </div>
+          </div>
+        </div>
 
-                  @endif
+      @endforeach
 
-                </td>
-              </tr>
-
-            @endif
-
-          @endforeach
-
-        @endif
-
-      </tbody>
-    </table>
-
-  @endforeach
-
-</div>
+    </div>
+  </div>
+</section>
 
 @endsection

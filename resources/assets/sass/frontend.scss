@@ -2,6 +2,10 @@
 **  Preset
 */
 
+body {
+  background-color: $black;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -184,7 +188,7 @@ header {
 **  Intro
 */
 
-.intro {
+#intro {
   padding: 80px 0;
   .frame {
     padding: 16px;
@@ -192,12 +196,14 @@ header {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     img {
+      position: relative;
+      z-index: 1;
       max-width: 100%;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
     &:before,
     &:after {
-      z-index: -1;
+      z-index: 0;
       position: absolute;
       content: "";
       opacity: 0.6;
@@ -366,7 +372,82 @@ header {
 }
 
 /*
-** Footer
+**  Products
+*/
+
+.products {
+  padding: 40px 0;
+  h1 {
+    text-align: center;
+    color: $black;
+    padding: 20px 0;
+  }
+  .card {
+    border: none;
+    .card-header {
+      border: 0.5px solid white;
+      border-radius: 0;
+      background-color: $red;
+      color: $white;
+      cursor: pointer;
+      font-family: $title;
+      font-size: 26px;
+      letter-spacing: 0.5px;
+      padding: 6px 12px;
+      small {
+        margin-left: 16px;
+        font-size: 16px;
+        font-family: $text;
+        font-style: italic;
+      }
+      i {
+        transition: all 0.2s ease;
+        float: right;
+        margin-top: 8px;
+      }
+      &.collapsed {
+        i {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    .card-body {
+      border: none;
+      padding: 0;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li {
+          transition: all 0.2s ease;
+          padding: 8px;
+          border-bottom: 1px solid $lightgrey;
+          display: flex;
+          justify-content: space-between;
+          font-family: $title;
+          &:hover {
+            background-color: $lightgrey;
+          }
+          .product-name {
+            font-size: 22px;
+            small {
+              font-size: 16px;
+              font-family: $text;
+              color: $grey;
+              margin-left: 4px;
+            }
+          }
+          .product-price {
+            font-size: 18px
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+**  Footer
 */
 
 footer {
