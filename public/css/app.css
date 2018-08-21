@@ -13961,13 +13961,21 @@ header .carousel-item .carousel-caption a {
 */
 
 .products {
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .products h1 {
   text-align: center;
   color: #151515;
-  padding: 20px 0;
+  padding: 20px 0 10px 0;
+}
+
+.products h2 {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: #999999;
+  padding: 0 0 20px 0;
 }
 
 .products .card {
@@ -13981,7 +13989,7 @@ header .carousel-item .carousel-caption a {
   color: #fff;
   cursor: pointer;
   font-family: "Playfair Display", serif;
-  font-size: 26px;
+  font-size: 22px;
   letter-spacing: 0.5px;
   padding: 6px 12px;
 }
@@ -14035,18 +14043,18 @@ header .carousel-item .carousel-caption a {
 }
 
 .products .card .card-body ul li .product-name {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .products .card .card-body ul li .product-name small {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Lato", sans-serif;
   color: #999999;
   margin-left: 4px;
 }
 
 .products .card .card-body ul li .product-price {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /*

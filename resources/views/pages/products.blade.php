@@ -5,6 +5,7 @@
 <section class="products">
   <div class="container">
     <h1>Nos produits</h1>
+    <h2>Préparés chaque jour, sur place, avec des produits frais et de qualité</h2>
 
     <div class="accordion" id="productCards">
 
@@ -30,7 +31,10 @@
                       <li>
                         <div class="product-name">
                           {{ $product->name }}
-                          <small> ({{ $product->description }})</small>
+
+                          @if(!empty($product->description))
+                            <small>{{ $product->description }}</small>
+                          @endif
                         </div>
 
                         <div class="product-price">
