@@ -14171,3 +14171,79 @@ footer .openTime {
   line-height: 30px;
 }
 
+/*
+**  Backend top navbar
+*/
+
+#backend {
+  background-color: #fff;
+}
+
+#backend .pointer {
+  cursor: pointer;
+}
+
+#backend a,
+#backend p {
+  font-family: "Lato", sans-serif;
+}
+
+#backend nav {
+  background-color: #872428;
+}
+
+#backend nav * {
+  color: #fff;
+}
+
+#backend nav .navbar-brand {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+}
+
+#backend nav .nav-link {
+  font-size: 20px;
+}
+
+#backend nav .nav-link i {
+  margin-right: 8px;
+}
+
+#backend .text-primary {
+  color: #872428 !important;
+}
+
+#backend .container-fluid {
+  padding-top: 72px;
+}
+
+#backend .container-fluid #menu {
+  padding: 0;
+  border-right: 1px solid #872428;
+}
+
+#backend .container-fluid #menu .sidebar {
+  height: 100%;
+  background-color: #fff;
+  padding: 20px;
+}
+
+#backend .container-fluid #menu .sidebar .nav-link {
+  color: #872428;
+}
+
+#backend .container-fluid #menu .sidebar .nav-link.active {
+  color: #fff;
+  background-color: #872428;
+  border-radius: 5px;
+}
+
+#backend .container-fluid #menu .sidebar .nav-link.active:hover {
+  color: #fff;
+}
+
+#backend .container-fluid main {
+  padding-top: 20px;
+  min-height: 100vh;
+}
+

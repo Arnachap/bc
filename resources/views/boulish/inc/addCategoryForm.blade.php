@@ -12,7 +12,7 @@
                     </div>
 
                     <div class="col-4">
-                        {{ Form::submit('Ajouter la catégorie', ['class' => 'btn btn-primary d-block ml-auto']) }}
+                        {{ Form::submit('Ajouter la catégorie', ['class' => 'btn btn-secondary d-block ml-auto']) }}
                     </div>
                 </div>
             </div>

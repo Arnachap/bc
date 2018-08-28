@@ -28,5 +28,5 @@
     
     <td colspan="2" class="text-center">
         {{ Form::hidden('_method', 'PUT') }}
-        {{ Form::submit('Modifier', ['class' => 'btn btn-primary w-100']) }}
+        {{ Form::submit('Modifier', ['class' => 'btn btn-secondary w-100']) }}
     </td>

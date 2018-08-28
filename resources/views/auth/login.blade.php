@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-6 mx-auto text-center">
                 <form class="form-signin" method="POST" action="{{ route('login') }}">
                     @csrf
@@ -30,7 +30,7 @@
                         </span>
                     @endif
             
-                    <button class="btn btn-lg btn-primary btn-block my-3" type="submit">{{ __('Connexion') }}</button>
+                    <button class="btn btn-lg btn-secondary btn-block my-3" type="submit">{{ __('Connexion') }}</button>
                 </form>
             </div>
     </div>

@@ -28,5 +28,5 @@
 
 <td colspan="2" class="text-center">
     {{ Form::hidden('category_id', $category->id) }}
-    {{ Form::submit('Ajouter', ['class' => 'btn btn-primary w-100']) }}
+    {{ Form::submit('Ajouter', ['class' => 'btn btn-secondary w-100']) }}
 </td>

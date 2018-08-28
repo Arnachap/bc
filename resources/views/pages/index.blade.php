@@ -62,7 +62,7 @@
                 <h2>Notre Service Traiteur</h2>
                 <p>En plus de ses produits traditionnels, le service traiteur de la <i>Boucherie Centrale</i> vous permet d'ajouter une touche de saveur unique à chacun de vos évènements.</p>
                 <a href="/service-traiteur" class="btn btn-secondary">Voir nos menus</a>
-                <a href="/service-traiteur" class="btn btn-primary">Demander un devis</a>
+                <a href="/contact" class="btn btn-primary">Demander un devis</a>
             </div>
     
             <div class="col-md-5 align-self-start">

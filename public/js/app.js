@@ -14089,7 +14089,7 @@ $(document).ready(function () {
         if (scroll > 0) {
             $('.mainNav').css('background-color', '#fff');
 
-            $('.nav-link').css('color', '#151515').hover(function () {
+            $('.nav-colored').css('color', '#151515').hover(function () {
                 $(this).css('color', '#b53035');
             }, function () {
                 $(this).css('color', '#151515');
@@ -14103,7 +14103,7 @@ $(document).ready(function () {
         } else {
             $('.mainNav').css('background-color', '#151515');
 
-            $('.nav-link').css('color', '#fff').hover(function () {
+            $('.nav-colored').css('color', '#fff').hover(function () {
                 $(this).css('color', '#b53035');
             }, function () {
                 $(this).css('color', '#fff');

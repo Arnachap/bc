@@ -16,7 +16,7 @@
     
         <th style="width: 10%;" colspan="2">
             {{ Form::hidden('_method', 'PUT') }}
-            {{ Form::submit('Modifier la catégorie', ['class' => 'btn btn-primary d-block ml-auto']) }}
+            {{ Form::submit('Modifier la catégorie', ['class' => 'btn btn-secondary d-block ml-auto']) }}
         </th>
     </div>
 </tr>

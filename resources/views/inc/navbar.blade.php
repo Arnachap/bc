@@ -12,16 +12,16 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item {{ Request::is('nos-produits') ? 'current' : '' }}">
-                    <a href="/nos-produits" class="nav-link">Nos produits</a>
+                    <a href="/nos-produits" class="nav-link nav-colored">Nos produits</a>
                 </li>
                 <li class="nav-item {{ Request::is('service-traiteur') ? 'current' : '' }}">
-                    <a href="/service-traiteur" class="nav-link">Service - traiteur</a>
+                    <a href="/service-traiteur" class="nav-link nav-colored">Service - traiteur</a>
                 </li>
                 <li class="nav-item {{ Request::is('a-propos') ? 'current' : '' }}">
-                    <a href="/a-propos" class="nav-link"> A propos</a>
+                    <a href="/a-propos" class="nav-link nav-colored"> A propos</a>
                 </li>
                 <li class="nav-item {{ Request::is('nous-contacter') ? 'current' : '' }}">
-                    <a href="/nous-contacter" class="nav-link">Contact</a>
+                    <a href="/nous-contacter" class="nav-link nav-colored">Contact</a>
                 </li>
             </ul>
         </div>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light fixed-top navbar-laravel">
+<nav class="navbar navbar-expand-md fixed-top">
     <div class="container">
         <a href="/" class="navbar-brand">Boucherie Centrale</a>
 
@@ -6,22 +6,21 @@
 
         @else
 
-        <div id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                        {{ __('Déconnexion') }}
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    
+                    <i class=" fa fa-power-off"></i>
+                    {{ __('Déconnexion') }}
+                </a>
+            </li>
+        </ul>
 
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
-
         @endguest
     </div>
 </nav>

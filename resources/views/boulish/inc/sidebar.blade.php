@@ -1,5 +1,5 @@
-<nav class="d-none d-md-block bg-light sidebar">
-    <ul class="nav nav-pills flex-column">
+<nav class="sidebar">
+    <ul class="nav flex-column">
         <li class="nav-item">
             <a class="nav-link {{ Request::is('boulish') ? 'active' : '' }}" href="/boulish">Accueil <span class="sr-only">(current)</span></a>
         </li>

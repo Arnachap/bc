@@ -13,8 +13,6 @@
 
                     <div class="col-md-3 p-3">
                         <div id="dailyMeal-{{ $meal->id }}" class="card">
-                            <img class="card-img-top img-fluid" src="../img/plate1.jpg" alt="">
-            
                             <div class="card-body">
                                 <h2 class="card-title pricing-card-title">{{ $meal->date }}</h2>
             
@@ -36,14 +34,14 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <div id="editMealButton-{{ $meal->id }}" class="col">
-                                        <i class="fa fa-2x fa-pencil text-primary"></i>
+                                        <i class="fa fa-2x fa-pencil text-primary pointer"></i>
                                     </div>
 
                                     <div class="col">
                                         {!! Form::open(['action' => ['DailyMealsController@destroy', $meal->id], 'method' => 'POST']) !!}
                                             {{ Form::hidden('_method', 'DELETE') }}
 
-                                            {{ Form::button('<i class="fa fa-2x fa-trash text-danger"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
+                                            {{ Form::button('<i class="fa fa-2x fa-trash text-danger pointer"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
                                         {!! Form::close() !!}
                                     </div>
                                 </div>
@@ -51,8 +49,6 @@
                         </div>
 
                         <div id="editMealForm-{{ $meal->id }}" class="card" style="display: none;">
-                            <img class="card-img-top img-fluid" src="../img/plate1.jpg" alt="">
-        
                             <div class="card-body text-center">
                                 {!! Form::open(['action' => ['DailyMealsController@update', $meal->id], 'method' => 'POST']) !!}
                                     {{ Form::date('date', $meal->date, ['class' => 'form-control my-2']) }}
@@ -83,12 +79,12 @@
 
             <div class="col-md-3 p-3">
                 <div class="card">
-                    <img class="card-img-top img-fluid" src="../img/plate1.jpg" alt="">
+                    <div id="addDailyMealButton" class="card-body text-primary pointer">
+                        <h2 class="card-title">
+                            <i class="fa fa-2x fa-plus"></i>
+                        </h2>
 
-                    <div id="addDailyMealButton" class="card-body text-primary">
-                        <i class="card-title pricing-card-title fa fa-4x fa-plus-circle"></i>
-
-                        <h3>Ajouter un plat du jour</h3 >
+                        <p class="card-text">Ajouter un plat du jour</p>
                     </div>
 
                     <div id="addDailyMealForm" class="card-body text-center" style="display: none;">
@@ -108,7 +104,7 @@
                                 </div>
                             </div>
 
-                            {{ Form::submit('Ajouter aux menus du jour', ['class' => 'btn btn-primary mt-4']) }}
+                            {{ Form::submit('Ajouter aux menus du jour', ['class' => 'btn btn-secondary mt-4']) }}
 
                         {!! Form::close() !!}
                     </div>

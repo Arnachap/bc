@@ -55,14 +55,14 @@
                                         @endif
                                     </td>
 
-                                    <td id="{{ $product->id }}" class="editButton text-center text-primary">
+                                    <td id="{{ $product->id }}" class="editButton text-center text-primary pointer">
                                         <i class="fa fa-2x fa-pencil"></i>
                                     </td>
 
                                     <td class="text-center">
                                         {!! Form::open(['action' => ['ServicesController@destroy', $product->id], 'method' => 'POST']) !!}
                                             {{ Form::hidden('_method', 'DELETE') }}
-                                            {{ Form::button('<i class="fa fa-2x fa-trash text-danger"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
+                                            {{ Form::button('<i class="fa fa-2x fa-trash text-danger pointer"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>
@@ -77,7 +77,7 @@
                     @endif
 
                     <tr id="addButton-{{ $category->id }}">
-                        <th colspan="4" scope="row" class="text-center text-primary">
+                        <th colspan="4" scope="row" class="text-center text-primary pointer">
                             <i class="fa fa-2x fa-plus-circle"></i><br>
                             Ajouter un produit
                         </th>
@@ -93,7 +93,7 @@
         @endforeach
     @endif
 
-    <button id="addCategoryButton" class="btn btn-primary d-block mx-auto my-5">Ajouter une catégorie</button>
+    <button id="addCategoryButton" class="btn btn-secondary d-block mx-auto my-5">Ajouter une catégorie</button>
 
     <table id="addCategoryForm" class="table bg-white table-hover my-5" style="display: none;">
         {!! Form::open(['action' => 'ServiceCategoriesController@store', 'method' => 'POST']) !!}

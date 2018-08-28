@@ -35,7 +35,7 @@ $(document).ready(function () {
         if (scroll > 0) {
             $('.mainNav').css('background-color', '#fff');
 
-            $('.nav-link')
+            $('.nav-colored')
                 .css('color', '#151515')
                 .hover(function () {
                     $(this).css('color', '#b53035');
@@ -51,7 +51,7 @@ $(document).ready(function () {
         } else {
             $('.mainNav').css('background-color', '#151515');
 
-            $('.nav-link')
+            $('.nav-colored')
                 .css('color', '#fff')
                 .hover(function () {
                     $(this).css('color', '#b53035');

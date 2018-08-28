@@ -22,7 +22,7 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <div class="col">
-                                        <i id="editPromoButton-{{ $promo->id }}" class="fa fa-2x fa-pencil text-primary"></i>
+                                        <i id="editPromoButton-{{ $promo->id }}" class="fa fa-2x fa-pencil text-primary pointer"></i>
                                     </div>
 
                                     <div class="col">
@@ -30,7 +30,7 @@
 
                                             {{ Form::hidden('_method', 'DELETE') }}
 
-                                            {{ Form::button('<i class="fa fa-2x fa-trash text-danger"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
+                                            {{ Form::button('<i class="fa fa-2x fa-trash text-danger pointer"></i>', ['type' => 'submit', 'class' => 'p-0 border-0 bg-white']) }}
 
                                         {!! Form::close() !!}
                                     </div>
@@ -61,7 +61,7 @@
 
             <div class="col-md-3 p-3">
                 <div class="card">
-                    <div id="addPromoButton" class="card-body text-primary">
+                    <div id="addPromoButton" class="card-body text-primary pointer">
                         <h2 class="card-title">
                             <i class="fa fa-2x fa-plus"></i>
                         </h2>
@@ -76,7 +76,7 @@
 
                             {{ Form::textarea('description', '', ['class' => 'form-control my-2', 'placeholder' => 'Description', 'rows' => '2']) }}
 
-                            {{ Form::submit('Ajouter la promotion', ['class' => 'btn btn-primary mt-3']) }}
+                            {{ Form::submit('Ajouter la promotion', ['class' => 'btn btn-secondary mt-3']) }}
 
                         {!! Form::close() !!}
                     </div>
