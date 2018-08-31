@@ -1,7 +1,6 @@
 /*
 **  Preset
 */
-
 body {
   background-color: $black;
 }
@@ -40,14 +39,17 @@ section {
 .btn-primary {
   background-color: transparent;
   border-color: $red;
+
   &:hover {
     background-color: $redfocus;
     border-color: $redfocus;
   }
+
   &:active {
     background-color: $redfocus;
     border-color: $redfocus;
   }
+
   &:focus {
     outline: 0 !important;
     background-color: $redfocus;
@@ -58,6 +60,7 @@ section {
 .btn-secondary {
   background-color: $red;
   border-color: $red;
+
   &:hover {
     background-color: $redfocus;
     border-color: $redfocus;
@@ -67,22 +70,25 @@ section {
 /*
 **  Navbar
 */
-
 .mainNav {
   background-color: $black;
   transition: background-color 0.3s ease;
+
   * {
     box-sizing: border-box;
   }
+
   .navbar-brand {
     font-size: 30px;
     font-family: $title;
     color: $redfocus;
     transition: color 0.3s ease;
+
     &:hover {
       color: $white;
     }
   }
+
   .nav-link {
     font-size: 12px;
     font-family: $text;
@@ -94,14 +100,17 @@ section {
     padding: 5px 10px;
     margin-top: 10px;
     transition: color 0.3s ease;
+
     &:hover {
       color: $redfocus;
     }
+
     &:before,
     &:after {
       position: absolute;
       transition: all 0.35s ease;
     }
+
     &:before {
       bottom: 0;
       display: block;
@@ -110,6 +119,7 @@ section {
       content: "";
       background-color: $redfocus;
     }
+
     &:after {
       left: 0;
       top: 0;
@@ -121,21 +131,26 @@ section {
       max-width: 0%;
       overflow: hidden;
     }
+
     &:hover:before {
       opacity: 1;
       width: 90%;
     }
+
     &:hover:after {
       max-width: 90%;
     }
   }
+
   .current {
     .nav-link {
       color: $red;
+
       &:before {
         opacity: 1;
         width: 90%;
       }
+
       &:after {
         max-width: 90%;
       }
@@ -146,9 +161,9 @@ section {
 /*
 **  Header
 */
-
 header {
   margin-top: -3rem;
+
   .carousel-item {
     height: 100vh;
     min-height: 300px;
@@ -157,6 +172,7 @@ header {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
     .carousel-caption {
       left: 0;
       top: 0;
@@ -164,20 +180,24 @@ header {
       padding-left: 16px;
       height: 100vh;
       width: 400px;
-      background: linear-gradient( to right, rgba($color: black, $alpha: 1), rgba($color: black, $alpha: 0.2) 90%, transparent);
+      background: linear-gradient(to right, rgba($color: black, $alpha: 1), rgba($color: black, $alpha: 0.2) 90%, transparent);
+
       * {
         max-width: 90%;
       }
+
       h1,
       h3 {
         text-align: left;
         font-size: 75px;
       }
+
       p {
         margin: 60px 0;
         text-align: left;
         font-size: 20px;
       }
+
       a {
         margin-left: -100px;
       }
@@ -188,20 +208,22 @@ header {
 /*
 **  Intro
 */
-
 #intro {
   padding: 80px 0;
+
   .frame {
     padding: 16px;
     position: relative;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+
     img {
       position: relative;
       z-index: 1;
       max-width: 100%;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
+
     &:before,
     &:after {
       z-index: 0;
@@ -209,6 +231,7 @@ header {
       content: "";
       opacity: 0.6;
     }
+
     &#frame1:before {
       border: 6px solid $red;
       bottom: 32px;
@@ -216,6 +239,7 @@ header {
       top: 0px;
       left: 0px;
     }
+
     &#frame2:after {
       border: 6px solid $red;
       bottom: 0px;
@@ -224,16 +248,24 @@ header {
       left: 32px;
     }
   }
+
+  .row {
+    padding: 50px 0;
+  }
+
   h2 {
     margin-bottom: 10px;
     color: $red;
   }
+
   p {
     color: $grey;
     line-height: 25px;
   }
+
   .btn-primary {
     color: $red;
+
     &:hover {
       color: $white;
     }
@@ -243,7 +275,6 @@ header {
 /*
 ** Banner
 */
-
 #banner {
   background-color: transparent;
   margin: 50px 0;
@@ -267,22 +298,25 @@ header {
 /*
 **  Offers
 */
-
 #offers {
   padding: 80px 0;
+
   h2 {
     text-align: center;
     color: $red;
   }
+
   p.intro {
     padding: 20px 0;
     text-align: center;
     color: $grey;
   }
+
   nav ul {
     list-style: none;
     display: block;
     text-align: center;
+
     li {
       position: relative;
       display: inline-block;
@@ -293,6 +327,7 @@ header {
       text-transform: uppercase;
       transition: color 0.3s ease;
       cursor: pointer;
+
       &:after {
         position: absolute;
         bottom: 5px;
@@ -303,33 +338,40 @@ header {
         background-color: transparent;
         transition: background-color 0.3s ease;
       }
+
       &.active {
         color: $black;
+
         &:after {
           background-color: $red;
         }
       }
     }
   }
+
   #mealOffers {
     .mealRow {
       padding: 15px 0;
       border-bottom: 1px solid $grey;
+
       .mealDate {
         color: $red;
         font-size: 22px;
         font-family: $title;
         text-align: center;
       }
+
       .mealInfo {
         h4 {
           font-size: 22px;
           margin-bottom: 16px;
         }
+
         p {
           color: $grey;
         }
       }
+
       .mealPrice {
         font-size: 18px;
         font-family: $title;
@@ -337,18 +379,23 @@ header {
       }
     }
   }
+
   #promoOffers {
     display: none;
+
     .promoRow {
       padding: 15px 0;
       border-bottom: 1px solid $grey;
+
       .promoInfo {
         text-align: center;
+
         h4 {
           color: $red;
           font-size: 22px;
           margin-bottom: 16px;
         }
+
         p {
           color: $grey;
         }
@@ -360,10 +407,10 @@ header {
 /*
 **  Maps
 */
-
 #maps {
   padding: 0;
   background-color: $black;
+
   iframe {
     z-index: 3;
     border: 0;
@@ -375,14 +422,15 @@ header {
 /*
 **  Products
 */
-
 .products {
   padding: 60px 0;
+
   h1 {
     text-align: center;
     color: $black;
     padding: 20px 0 10px 0;
   }
+
   h2 {
     text-align: center;
     font-family: $text;
@@ -390,8 +438,10 @@ header {
     color: $grey;
     padding: 0 0 20px 0;
   }
+
   .card {
     border: none;
+
     .card-header {
       border: 0.5px solid white;
       border-radius: 0;
@@ -402,30 +452,36 @@ header {
       font-size: 22px;
       letter-spacing: 0.5px;
       padding: 6px 12px;
+
       small {
         margin-left: 16px;
         font-size: 16px;
         font-family: $text;
         font-style: italic;
       }
+
       i {
         transition: all 0.2s ease;
         float: right;
         margin-top: 8px;
       }
+
       &.collapsed {
         i {
           transform: rotate(-180deg);
         }
       }
     }
+
     .card-body {
       border: none;
       padding: 0;
+
       ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
+
         li {
           transition: all 0.2s ease;
           padding: 8px;
@@ -433,11 +489,14 @@ header {
           display: flex;
           justify-content: space-between;
           font-family: $title;
+
           &:hover {
             background-color: $lightgrey;
           }
+
           .product-name {
             font-size: 18px;
+
             small {
               font-size: 14px;
               font-family: $text;
@@ -445,6 +504,7 @@ header {
               margin-left: 4px;
             }
           }
+
           .product-price {
             font-size: 16px
           }
@@ -457,9 +517,9 @@ header {
 /*
 **  About
 */
-
 .about {
   padding: 60px 0;
+
   h1 {
     padding: 20px 0;
   }
@@ -468,34 +528,40 @@ header {
 /*
 **  Contact
 */
-
 .contact {
   padding: 60px 0;
+
   h1 {
     text-align: center;
     padding: 20px 0 10px 0;
   }
+
   .intro {
     padding: 10px 0 20px 0;
     text-align: center;
     font-size: 20px;
     color: $grey;
   }
+
   form {
     label {
       font-size: 18px;
     }
+
     input,
     textarea {
       font-family: $text;
+
       &::placeholder {
         font-family: $text;
       }
     }
+
     .form-field,
     hr {
       margin: 20px 0 20px 0;
     }
+
     .button {
       text-align: center;
     }
@@ -505,24 +571,27 @@ header {
 /*
 **  Footer
 */
-
 footer {
   background-color: $black;
   color: $grey;
   padding: 60px 0;
+
   h4 {
     font-size: 20px;
     color: $redfocus;
     margin-bottom: 20px;
   }
+
   ul {
     padding: 0;
     list-style-type: none;
     text-align: left;
+
     li {
       position: relative;
       padding-left: 30px;
       margin-bottom: 8px;
+
       i {
         position: absolute;
         left: 0;
@@ -530,10 +599,12 @@ footer {
       }
     }
   }
+
   .openDays {
     font-weight: 700;
     line-height: 20px;
   }
+
   .openTime {
     line-height: 30px;
   }

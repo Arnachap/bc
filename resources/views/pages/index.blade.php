@@ -54,9 +54,7 @@
                 <p>La <i>Boucherie Centrale</i> de Malzéville vous propose chaque jours des produits frais, élaborés sur place. De la viande au fromage, en passant par les vins et accompagnements en tous genres, notre équipe met en oeuvre tout son savoir-faire pour créer des mets d'une qualité inégalable.</p>
             </div>
         </div>
-    </div>
-    
-    <div class="container intro">
+        
         <div class="row">
             <div class="col-md-7 align-self-center">
                 <h2>Notre Service Traiteur</h2>
@@ -113,7 +111,9 @@
 
                             <div class="col-6 mealInfo">
                                 <h4>{{ $meal->name }}</h4>
-                                <p>Feuilleté, et accompagné de sa sauce béchamel</p>
+                                @if(!empty($meal->description))
+                                    <p>{{ $meal->description }}</p>
+                                @endif
                             </div>
 
                             <div class="col-3 mealPrice">

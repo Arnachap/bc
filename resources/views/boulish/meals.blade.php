@@ -17,7 +17,15 @@
                                 <h2 class="card-title pricing-card-title">{{ $meal->date }}</h2>
             
                                 <ul class="list-unstyled mt-3 mb-4">
-                                    <li>{{ $meal->name }}</li>
+                                    <li>
+                                        <h3>{{ $meal->name }}</h3>
+                                    </li>
+
+                                    @if(!empty($meal->description))
+                                        <li>
+                                            {{ $meal->description }}
+                                        </li>
+                                    @endif
 
                                     <li>{{ $meal->price }}€ 
 
@@ -93,6 +101,8 @@
                             {{ Form::date('date', '', ['class' => 'form-control my-2']) }}
 
                             {{ Form::text('name', '', ['class' => 'form-control my-2', 'placeholder' => 'Nom du plat']) }}
+
+                            {{ Form::textarea('description', '', ['class' => 'form-control my-2', 'placeholder' => 'Description', 'rows' => '2']) }}
 
                             <div class="row">
                                 <div class="col">

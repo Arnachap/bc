@@ -24,6 +24,7 @@ class DailyMealsController extends Controller
         // Add daily meal
         $meal = new DailyMeal;
         $meal->name = $request->input('name');
+        $meal->description = $request->input('description');
         $meal->date = $request->input('date');
         $meal->price = $request->input('price');
         $meal->portion = $request->input('portion');
@@ -50,6 +51,7 @@ class DailyMealsController extends Controller
         // Add daily meal
         $meal = DailyMeal::find($id);
         $meal->name = $request->input('name');
+        $meal->description = $request->input('description');
         $meal->date = $request->input('date');
         $meal->price = $request->input('price');
         $meal->portion = $request->input('portion');
