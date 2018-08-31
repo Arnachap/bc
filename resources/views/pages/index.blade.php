@@ -101,29 +101,33 @@
             @if(count($dailyMeals) > 0)
 
                 @foreach($dailyMeals as $meal)
+
+                    @if($meal->date >= Date::now()->sub('1 day'))
                 
-                    <div class="col-md-6 offset-md-3">
-                        <div class="row mealRow">
-                            <div class="col-3 mealDate">
-                                {{ Carbon\Carbon::parse($meal->date)->format('d') }}
-                                <br>{{ Carbon\Carbon::parse($meal->date)->format('F') }}
-                            </div>
+                        <div class="col-md-6 offset-md-3">
+                            <div class="row mealRow">
+                                <div class="col-3 mealDate">
+                                    {{ Date::parse($meal->date)->format('d') }}
+                                    <br>{{ Date::parse($meal->date)->format('F') }}
+                                </div>
 
-                            <div class="col-6 mealInfo">
-                                <h4>{{ $meal->name }}</h4>
-                                @if(!empty($meal->description))
-                                    <p>{{ $meal->description }}</p>
-                                @endif
-                            </div>
+                                <div class="col-6 mealInfo">
+                                    <h4>{{ $meal->name }}</h4>
+                                    @if(!empty($meal->description))
+                                        <p>{{ $meal->description }}</p>
+                                    @endif
+                                </div>
 
-                            <div class="col-3 mealPrice">
-                                {{ $meal->price }}€ 
-                                @if(!empty($meal->portion))
-                                    / {{ $meal->portion }}</p>
-                                @endif
+                                <div class="col-3 mealPrice">
+                                    {{ $meal->price }}€ 
+                                    @if(!empty($meal->portion))
+                                        / {{ $meal->portion }}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                    @endif
 
                 @endforeach
             
