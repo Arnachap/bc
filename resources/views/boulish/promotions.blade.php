@@ -48,7 +48,7 @@
         
                                     {{ Form::hidden('_method', 'PUT') }}
                                     
-                                    {{ Form::submit('Ajouter la promotion', ['class' => 'btn btn-primary mt-3']) }}
+                                    {{ Form::submit('Ajouter la promotion', ['class' => 'btn btn-secondary mt-3']) }}
 
                                 {!! Form::close() !!}
                             </div>

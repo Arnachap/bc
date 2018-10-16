@@ -75,7 +75,7 @@
                                     
                                     {{ Form::hidden('_method', 'PUT') }}
 
-                                    {{ Form::submit('Modifier le menu du jour', ['class' => 'btn btn-primary my-2']) }}
+                                    {{ Form::submit('Modifier le menu du jour', ['class' => 'btn btn-secondary my-2']) }}
                                 {!! Form::close() !!}
                             </div>
                         </div>
